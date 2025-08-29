@@ -115,6 +115,10 @@ button.ToolbarButton-Button[name="TilingToggle"] { /* FIXING SPACE NEXT TO TAB T
     background-color: var(--colorBg); /* HOVER OF WINDOW BUTTONS */
 }
 
+.theme-dark#browser.win .window-buttongroup button:hover {
+    background-color: var(--colorBg); /* HOVER OF WINDOW BUTTONS DARK THEME */
+}
+
 #browser.win .window-buttongroup button.window-close:hover {
     background-color: var(--colorBg); /* HOVER OF WINDOW CLOSE BUTTON */
     fill: var(--colorFg);
