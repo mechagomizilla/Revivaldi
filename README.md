@@ -3,13 +3,20 @@ My custom CSS for Vivaldi, inspired by Opera
 
 Screenshots:
 
-<img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/5b310355-adb4-4fa1-9fb8-3cdcae559d4a" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/d616bd32-9201-4dcf-8dc0-a63f9c597df6" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/6e4e1c32-8b5d-4671-ad1f-e84b75915874" />
 
-<img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/19ff508d-e57a-4524-9923-e56f89109f4f" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/e859c50e-96c3-4d3f-96ea-80b30c25853b" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/031fd1b1-ed85-4df4-b486-27409f0aa88b" />
 
-<img width="1080" height="580" alt="image" src="https://github.com/user-attachments/assets/b337f467-ba56-4705-8296-78b6a7f904dd" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/864d800c-ab98-4324-8924-7d0ec9858af8" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/61b44404-82e0-452c-8ff9-cf8cd3bacc1b" />
 
-<img width="1080" height="580" alt="image" src="https://github.com/user-attachments/assets/2886a50d-bf9c-4f8d-85c9-c9184b8cd40a" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/26a936ff-fda9-4922-ae33-bdf28ca4153a" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/8fca6486-ef88-403e-90f4-48947c056c08" />
+
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/51f6ae46-a591-4a8f-b6d1-c617460dd4b3" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/5c9f4c79-893c-408d-9689-b696bdb124bb" />
 
 
 Configuration steps:
