@@ -490,6 +490,7 @@ button.ToolbarButton-Button[name="SyncedTabs"] span::before {
     background-color: color-mix(in srgb, var(--colorBg), var(--lessTransparent)); /* BG COLOR OF CTRL F */
     backdrop-filter: var(--blur);
     -webkit-backdrop-filter: var(--blur);
+    border-bottom: none;
 }
 
 input[type=tel], input[type=text], input[type=search], input[type=email], input[type=url], input[type=date], input[type=time], input[type=password], input[type=number] {
@@ -515,19 +516,3 @@ input[type=radio], input[type=checkbox] {
 .theme-dark input[type=radio], .theme-dark input[type=checkbox] {
     background-image: none;
 }
-
-/* WORKSPACE POPUP */
-
-/* .theme-dark .WorkspacePopup {
-    background-color: transparent;
-    background-image: url(12.png);
-    background-position: right;
-} */
-
-
-
-
-
-
-
-
