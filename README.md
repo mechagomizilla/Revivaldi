@@ -30,9 +30,11 @@ Configuration steps:
 
   Colors:
   
-  <img width="548" height="355" alt="image" src="https://github.com/user-attachments/assets/12d9d7a0-90f9-4326-9e88-b6af02823b5f" />
+  <img width="637" height="355" alt="image" src="https://github.com/user-attachments/assets/23ee2d3f-fdd9-47d8-92a9-b8c2fcc527d2" />
   
   Background (my recommendations):
+
+  https://unsplash.com/photos/an-aerial-view-of-a-boat-in-the-water-IFH0EvwEeZ0 (my current background image)
   
   https://abhishekkumarsahu.gumroad.com/l/driftwall (choose free version)
   
