@@ -1,11 +1,17 @@
 /* TODO
 
+ŠPATNÁ BARVA BOOKMARK IKONKU V URL
+
+
+
+
 zkusit upravit označený taby ctrl (asi nejde?)
 
 zkusit opravit tab tiles divnej padding (asi nejde?)
 
 
 modernizace:
+rozevřená url adresa
 ctrl+f (ARC, ZEN?)
 speed dial (opera? nebo jinde inspirace, nebo stáhnout extension?)
 workspace okénko - vložit bg-picture?
@@ -25,8 +31,8 @@ změnit ikonku vivaldi: https://forum.vivaldi.net/topic/66940/allow-to-change-vi
 */ 
 
 :root {
-    --lessTransparent: transparent 50%; /* 50% */
-    --customRadius: 8px; /* NOT USING NOW */
+    --lessTransparent: transparent 50%; /* TRANSPARENCY OF BROWSER - 50% */
+    --blur: blur(15px); /* BLUR OF BROWSER */
 }
 
 /* * {
@@ -47,15 +53,13 @@ změnit ikonku vivaldi: https://forum.vivaldi.net/topic/66940/allow-to-change-vi
     height: 44px; /* HEIGHT OF WINDOW BUTTONS */
 }
 
-#browser.win .window-buttongroup button.window-close { /* ADJUSTING CLOSE WINDOW BUTTON */
-    border-top-right-radius: var(--radius);
-    border-bottom-right-radius: var(--radius); 
-}
-
 .mainbar {
     background-color: color-mix(in srgb, var(--colorBg), var(--lessTransparent)); /* BG COLOR OF WHOLE MAINBAR */
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
     margin: 5px;
     border-radius: var(--radius);
+    z-index: 10;
 }
 
 .SearchField, .UrlBar-AddressField { /* SEARCHBAR SETTINGS */
@@ -65,13 +69,11 @@ změnit ikonku vivaldi: https://forum.vivaldi.net/topic/66940/allow-to-change-vi
 
 .SearchField:hover, .UrlBar-AddressField:hover { /* HOVER OF SEARCHBAR */
     background-color: var(--colorBg);
-    /* border-radius: var(--customRadius); */
 }
 
 .color-behind-tabs-on .SearchField:focus-within, .color-behind-tabs-on .MailSearchField-Inner:focus-within, .color-behind-tabs-on .UrlBar-AddressField:focus-within {
     outline: none; /* REMOVE OF SEARCHBAR BORDER WHEN IN FOCUS */
     background-color: var(--colorBg);
-    /* border-radius: var(--customRadius); */
 }
 
 .UrlFragment-Wrapper--ShouldHighlight {
@@ -87,16 +89,11 @@ změnit ikonku vivaldi: https://forum.vivaldi.net/topic/66940/allow-to-change-vi
     background-color: var(--colorBg);
 }
 
-.page-zoom-controls > .button-toolbar > button, .disable-titlebar .toolbar-mainbar > .button-toolbar > button, .disable-titlebar .toolbar-mainbar .toolbar-extensions > .toolbar-group > .button-toolbar > button, .disable-titlebar .toolbar-mainbar .page-zoom-controls > .toolbar-group > .button-toolbar > button, .disable-titlebar .toolbar-mainbar > .toolbar-group > .button-toolbar > button {
-    /* border-radius: var(--customRadius); */ /* RADIUS OF SOME MAIN BAR ICONS */
-}
-
 #browser:not(.tabs-top) .vivaldi:hover, #browser:not(.tabs-top) .vivaldi:focus-visible { /* HOVER OF HAMBURGER BUTTON */
     background-color: var(--colorBg);
 }
 
 .disable-titlebar.address-top#browser:not(.tabs-top) .vivaldi {
-    /* border-radius: var(--customRadius); */ /* RADIUS OF HAMBURGER ICON */
     margin: 0 5px; /* REDUCING SPACE NEXT TO HAMBURGER */
 }
 
@@ -114,8 +111,18 @@ button.ToolbarButton-Button[name="TilingToggle"] { /* FIXING SPACE NEXT TO TAB T
     background-image: linear-gradient(var(--colorBg),var(--colorBg)); /* CHANGE COLOR WHEN ICON IS ACTIVE */
 }
 
-.theme-dark#browser.win .window-buttongroup button:hover {
+#browser.win .window-buttongroup button:hover {
     background-color: var(--colorBg); /* HOVER OF WINDOW BUTTONS */
+}
+
+#browser.win .window-buttongroup button.window-close:hover {
+    background-color: var(--colorBg); /* HOVER OF WINDOW CLOSE BUTTON */
+    fill: var(--colorFg);
+}
+
+#browser.win .window-buttongroup button.window-close { /* ADJUSTING CLOSE WINDOW BUTTON */
+    border-top-right-radius: var(--radius);
+    border-bottom-right-radius: var(--radius); 
 }
 
 .button-toolbar > button { /* HOVER OF ICONS IN URL */
@@ -132,6 +139,10 @@ button.ToolbarButton-Button[name="TilingToggle"] { /* FIXING SPACE NEXT TO TAB T
     padding-top: 5px; /* ADJUSTING SPACE ABOVE SIDEBAR ICONS */
 }
 
+.toolbar, .toolbar-group, .toolbar-wrap {
+    gap: 5px; /* ADJUSTING GAP BETWEEN ICONS */
+}
+
 div#main.right #panels-container {
     padding-bottom: 5px; /* MORE SPACE UNDER SETTINGS ICON */
     min-width: 44px; /* FIXING SIDEBAR PART 1 */
@@ -139,6 +150,8 @@ div#main.right #panels-container {
 
 .density-on #switch { /* FIXING SIDEBAR PART 2 + ADJUSTING */
     background-color:  color-mix(in srgb, var(--colorBg), var(--lessTransparent));
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
     border-radius: var(--radius);
     padding-bottom: 5px;
     padding-right: 4px;
@@ -150,18 +163,8 @@ div#main.right #panels-container {
     margin-right: 5px;
 }
 
-#panels .webpanel-stack .webpanel .webpanel-content { /* WEBPANEL SETTINGS */
-    margin-right: 7px;
-    border-bottom-right-radius: var(--radius);
-    border-top-right-radius: var(--radius);
-}
-
 #panels-container.right:not(.icons) .panel-group, #panels-container.right.icons:not(:has(.SlideBar)) {
     border-left: none; /* HIDE WEIRD BORDER IN SIDEBAR */
-}
-
-#panels-container.overlay .panel-group {
-    background-color: transparent; /* TRANSPARENT BG WHEN OPENED WEB APP */
 }
 
 .ExtensionToggleIcon.ExtensionToggleIcon--Expanded {
@@ -170,12 +173,10 @@ div#main.right #panels-container {
 
 .ExtensionIcon--Hidden { /* ADJUSTING HIDDEN EXTENSIONS */
     background-color: transparent;
-    /* border-radius: var(--customRadius); */
 }
 
 #panels-container button:hover { /* HOVER OF BUTTONS ON SIDEBAR */
     background-color: var(--colorBg);
-    /* border-radius: var(--customRadius); */
 }
 
 .ExtensionIcon--Hidden:hover, .ExtensionIcon--Hidden:active { /* HOVER OF HIDDEN EXTENSIONS */
@@ -194,6 +195,43 @@ div#main.right #panels-container {
 
 .density-on #switch .addwebpanel-wrapper > button.active button, .density-on #switch > .button-toolbar.active button, .density-on #switch > * > .button-toolbar.active button, .density-on #switch > button.active button {
     background-color: var(--colorBg); /* CHANGING BG COLOR AND ICON COLOR WHEN BOOKMARK ICON IS ACTIVE */
+}
+
+/* WEBPANELS */
+
+#panels-container.right .panel {
+    padding: 5px 13px 5px 5px; /* SETTINGS OF ALL PANELS */
+}
+
+.panel-group {
+    background-color: color-mix(in srgb, var(--colorBg), var(--lessTransparent)); 
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    border-radius: var(--radius);
+    margin-right: 5px;
+}
+
+.panel > header h1 { /* REMOVING TITLE OF PANELS */
+    display: none;
+}
+
+#panels-container.right:not(.icons).overlay .panel-group {
+    box-shadow: none; /* REMOVING LEFT SHADOW */
+}
+
+#panels-container.overlay .panel-group {
+    background-color: transparent;  /* TRANSPARENT BG WHEN OPENED WEB APP */
+}
+
+#panels .webpanel-stack .webpanel .webpanel-content { /* WEB APP SETTINGS */
+    margin-right: 7px;
+    border-bottom-right-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+}
+
+#panels .webpanel-stack .webpanel.visible { /* FIXING WEB APPS PANELS */
+    visibility: visible;
+    padding: 0px;
 }
 
 /* WORKSPACES */
@@ -224,6 +262,8 @@ div#main.right #panels-container {
 
 #browser:not(.transparent-tabbar) #tabs-tabbar-container {
     background-color: color-mix(in srgb, var(--colorBg), var(--lessTransparent)); /* BG COLOR OF TAB BAR PART 2 */
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
     margin-left: 5px;
     border-radius: var(--radius);
 }
@@ -246,9 +286,10 @@ div#main.right #panels-container {
 }
 
 .separator hr { /* ADJUSTING SEPARATOR UNDER PINNED TABS */
-    /* border: 1px solid color-mix(in srgb, var(--colorBg), var(--lessTransparent)); */
     border: 1px solid color-mix(in srgb, var(--colorBg), var(--lessTransparent));
     background: color-mix(in srgb, var(--colorBg), var(--lessTransparent));
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
     opacity: 0.5;
     width: 100%;
     margin-top: 6px;
@@ -286,7 +327,7 @@ div#main.right #panels-container {
 
 .svg-tab-stack .stack-frame { /* BORDER COLOR OF TAB GROUP */
     /* stroke: transparent; */
-/*  stroke-width: 2px; */
+    /* stroke-width: 2px; */
 } 
 
 #browser .tab-position.colored .tab:not(.active) {
@@ -406,50 +447,45 @@ button.ToolbarButton-Button[name="SyncedTabs"] span::before {
 
 .SpeedDial--Thumbnail { /* BG COLOR OF TITLE */
     background-color: color-mix(in srgb, var(--colorBg), var(--lessTransparent));
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
     box-shadow: none;
-    /* border-radius: var(--customRadius); */
 }
 
 /* BOOKMARKS PANEL */
 
 .panel-bookmarks .panel-bookmarks-edit {
-    padding-right: 12px;
+    padding-right: 12px; /* FIXING BOTTOM PART */
 }
 
-/* DOWNLOAD WINDOW */
+/* DOWNLOAD PANEL */
 
 .download-editor.download-editor {
-    padding: 0px 12px 0px 0px;
+    padding-right: 13px; /* FIXING BOTTOM PART */
 }
 
 /* CALENDAR PANEL */
 
-.panel {
-    padding-right: 8px;
-}
-
 .panel .calendar-grid-agenda {
-    padding-right: 12px;
-}
-
-#panels-container.right .panel {
-    padding-left: 0px;
+    padding-right: 12px; /* FIXING MIDDLE PART */
 }
 
 .MonthDayPicker {
-    margin-bottom: 0px;
+    margin-bottom: 0px; /* FIXING BOTTOM PART */
 }
 
 /* MAIL PANEL */
 
 .VivaldiList-Offset {
-    padding-right: 12px;
+    padding-right: 12px; /* FIXING POSITION */
 }
 
 /* CTRL+F */
 
 .find-in-page-wrapper {
     background-color: color-mix(in srgb, var(--colorBg), var(--lessTransparent)); /* BG COLOR OF CTRL F */
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
 }
 
 input[type=tel], input[type=text], input[type=search], input[type=email], input[type=url], input[type=date], input[type=time], input[type=password], input[type=number] {
@@ -483,3 +519,11 @@ input[type=radio], input[type=checkbox] {
     background-image: url(12.png);
     background-position: right;
 } */
+
+
+
+
+
+
+
+
