@@ -55,5 +55,6 @@ Configuration steps:
   11) Panel > Panel Options > check Floating Panel
   12) Bookmarks > BOOKMARK BAR > uncheck Show Bookmark Bar
   13) Rightclick tab stacking > Edit... > Choose any color to use design from CSS (only if you are using tab stacking), repeat for every tab stacking
-  14) Restart Vivaldi
-  15) Enjoy your new CSS
+  14) Rightclick web app > Floating Panel > uncheck This panel, repeat for every web app you are using
+  15) Restart Vivaldi
+  16) Enjoy your new CSS
