@@ -58,3 +58,23 @@ Configuration steps:
   14) Rightclick web app > Floating Panel > uncheck This panel, repeat for every web app you are using
   15) Restart Vivaldi
   16) Enjoy your new CSS
+
+My recommendations:
+
+Command chains:
+
+  1) Hide tab bar and panel with web apps with one button <img width="39" height="39" alt="image" src="https://github.com/user-attachments/assets/da4720b8-3c31-431d-86ab-6cb95e4e5526" />
+
+  <img width="750" alt="image" src="https://github.com/user-attachments/assets/a8857582-6aec-48e4-aac2-3e9c50867f3d" />
+
+  - You can also set it as mouse gesture
+
+  2) Copy URL address with one button <img width="40" height="39" alt="image" src="https://github.com/user-attachments/assets/61577936-e092-4873-98b0-83dfcb926339" />
+
+  <img width="750" alt="image" src="https://github.com/user-attachments/assets/fedbe120-b572-45b5-8a0b-fce44493df28" />
+
+  3) You can find more command chains guides here: https://forum.vivaldi.net/topic/63828/command-chain-recipes
+
+Extension Arc Peek:
+
+https://chromewebstore.google.com/detail/arc-peek-link-preview/cemmifilbjnnfldldefdakgljjloajhb
