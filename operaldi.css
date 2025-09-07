@@ -18,7 +18,6 @@ workspace okénko - vložit bg-picture?
 tab tiles okénko - vložit bg-picture?
 OZNÁMENÍ KALENDÁŘE
 download
-
 kalendář
 bookmarks
 email
@@ -34,10 +33,6 @@ změnit ikonku vivaldi: https://forum.vivaldi.net/topic/66940/allow-to-change-vi
     --lessTransparent: transparent 50%; /* TRANSPARENCY OF BROWSER - 50% */
     --blur: blur(15px); /* BLUR OF BROWSER */
 }
-
-/* * {
-    font-family: Arial;
-} */
 
 /* MAINBAR */
 
@@ -243,7 +238,6 @@ div#main.right #panels-container {
 .color-behind-tabs-on #tabs-tabbar-container .toolbar:not(.toolbar-small) > .button-toolbar, .color-behind-tabs-on #tabs-tabbar-container .toolbar:not(.toolbar-small) > div > .button-toolbar, .color-behind-tabs-on #tabs-tabbar-container .toolbar:not(.toolbar-small) > .button-toolbar:hover, .color-behind-tabs-on #tabs-tabbar-container .toolbar:not(.toolbar-small) > div > .button-toolbar:hover {
     color: var(--colorFg);
     margin-top: 5px;
-    /* border-radius: var(--radius); */
 } /* ADJUSTING WORKSPACE BUTTON */
 
 .tabs-left .button-toolbar.workspace-popup.tabbar-workspace-button, .tabs-right .button-toolbar.workspace-popup.tabbar-workspace-button {
@@ -401,24 +395,16 @@ button.ToolbarButton-Button[name="SyncedTabs"] span::before {
 }
 
 #tabs-container .toolbar-tabbar-before > div > .button-toolbar > button, #tabs-container .toolbar-tabbar-after > div > .button-toolbar > button, #tabs-container .toolbar-tabbar-before > .button-toolbar > button, #tabs-container .toolbar-tabbar-after > .button-toolbar > button {
-   /*  border: unset; */
     height: 34px;
     min-width: 34px;
     padding: 0;
-    /* border-radius: var(--radius); */
 } /* BIGGER HOVER EFFECT OF TRASH AND CLOUD */
 
 /* INNER ROUND BORDERS */
 
 #browser:not(.fullscreen) #webpage-stack {
-    border-bottom-left-radius: var(--radius);
-    border-bottom-right-radius: var(--radius);
-    border-top-left-radius: var(--radius);
-    border-top-right-radius: var(--radius);
-    margin-top: 0px;
-    margin-left: 5px;
-    margin-right: 5px; 
-    margin-bottom: 5px; 
+    border-radius: var(--radius);
+    margin: 0px 5px 5px 5px;
 }
 
 /* TAB TILES MODE */
@@ -510,9 +496,9 @@ input, select, textarea, .dateInput input[type=date], .dateInput input[type=time
 }
 
 input[type=radio], input[type=checkbox] {
-    /* box-shadow: none; */ /* REMOVE SHADOW FROM CHECKBOX */
+    box-shadow: none; /* REMOVE SHADOW FROM CHECKBOX */
 }
 
 .theme-dark input[type=radio], .theme-dark input[type=checkbox] {
-    background-image: none;
+    background-image: none; /* REMOVE SHADOW FROM CHECKBOX DARK MODE */
 }
