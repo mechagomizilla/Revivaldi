@@ -12,6 +12,7 @@ CTRL+E - jako workspace window? (Arc, Zen) - bacha, ovlivňuej všechny modáln�
 ctrl+f (ARC?)??
 
 
+
 moooooooooooožnááá:
 arc like pinned taby?
 hover tab bar+panel (jen když jsou schované)??
@@ -244,10 +245,6 @@ div#main.right #panels-container {
 
 .win.hasfocus .vivaldi-tree .VivaldiList:focus-within .tree-item[data-lead] .tree-row.tree-row, .linux.hasfocus .vivaldi-tree .VivaldiList:focus-within .tree-item[data-lead] .tree-row.tree-row {
     box-shadow: none; /* REMOVING BORDER OF SELECTED ITEM */
-}
-
-input, textarea, .dateInput input[type=date], .dateInput input[type=time]  { /* BG OF ALL SEARCH BARS */
-    background-color:  color-mix(in srgb, var(--colorBg), var(--lessTransparent)) !important;
 }
 
 .panel-group .sortselector.sortselector-compact, .download-popout .sortselector.sortselector-compact {
