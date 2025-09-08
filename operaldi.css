@@ -1,29 +1,21 @@
 /* TODO
 
-ŠPATNÁ BARVA BOOKMARK IKONKU V URL
-
-
-
-
 zkusit upravit označený taby ctrl (asi nejde?)
 
 zkusit opravit tab tiles divnej padding (asi nejde?)
 
 
+
 modernizace:
-rozevřená url adresa
-ctrl+f (ARC, ZEN?)
-speed dial (opera? nebo jinde inspirace, nebo stáhnout extension?)
-workspace okénko - vložit bg-picture?
-tab tiles okénko - vložit bg-picture?
-OZNÁMENÍ KALENDÁŘE
-download
-kalendář
-bookmarks
-email
-CTRL+E - vložit bg-picture? (Arc, Zen)
+speed dial (opera? nebo inspirace jinde?)
+CTRL+E - jako workspace window? (Arc, Zen) - bacha, ovlivňuej všechny modální okna!
+ctrl+f (ARC?)??
 
 
+moooooooooooožnááá:
+arc like pinned taby?
+hover tab bar+panel (jen když jsou schované)??
+horizontal tabs???
 
 změnit ikonku vivaldi: https://forum.vivaldi.net/topic/66940/allow-to-change-vivaldi-icon/4
 
@@ -199,10 +191,14 @@ div#main.right #panels-container {
 /* WEBPANELS */
 
 #panels-container.right .panel {
-    padding: 5px 13px 5px 5px; /* SETTINGS OF ALL PANELS */
+    padding: 5px 13px 5px 5px; /* ADJUSTING ALL PANELS  PART 1 */
 }
 
-.panel-group {
+.panel .outerScrollbar {
+    margin-right: 0px; /* ADJUSTING ALL PANELS PART 2 */
+}
+
+.panel-group { /* ADJUSTING ALL PANELS PART 3 */
     background-color: color-mix(in srgb, var(--colorBg), var(--lessTransparent)); 
     backdrop-filter: var(--blur);
     -webkit-backdrop-filter: var(--blur);
@@ -222,7 +218,7 @@ div#main.right #panels-container {
     background-color: transparent;  /* TRANSPARENT BG WHEN OPENED WEB APP */
 }
 
-#panels .webpanel-stack .webpanel .webpanel-content { /* WEB APP SETTINGS */
+#panels .webpanel-stack .webpanel .webpanel-content { /* ADJUSTING WEB APP */
     margin-right: 7px;
     border-bottom-right-radius: var(--radius);
     border-top-right-radius: var(--radius);
@@ -231,6 +227,54 @@ div#main.right #panels-container {
 #panels .webpanel-stack .webpanel.visible { /* FIXING WEB APPS PANELS */
     visibility: visible;
     padding: 0px;
+}
+
+.panel > header {
+    margin-bottom: -1px; /* ADJUSTING GAP UNDER SEARCH BAR */
+}
+
+.vivaldi-tree .tree-row.dragover, .hasfocus .vivaldi-tree:focus-within .tree-row[data-selected] { /* BG COLOR OF SELECTED ITEM WHEN BROWSER IS IN FOCUS */
+    background-color:  color-mix(in srgb, var(--colorBg), var(--lessTransparent));
+    color: var(--colorFg);
+}
+
+.vivaldi-tree .tree-row[data-selected] { /* BG COLOR OF SELECTED ITEM WHEN BROWSER ISNT IN FOCUS */
+    background-color:  color-mix(in srgb, var(--colorBg), var(--lessTransparent));
+}
+
+.win.hasfocus .vivaldi-tree .VivaldiList:focus-within .tree-item[data-lead] .tree-row.tree-row, .linux.hasfocus .vivaldi-tree .VivaldiList:focus-within .tree-item[data-lead] .tree-row.tree-row {
+    box-shadow: none; /* REMOVING BORDER OF SELECTED ITEM */
+}
+
+input, textarea, .dateInput input[type=date], .dateInput input[type=time]  { /* BG OF ALL SEARCH BARS */
+    background-color:  color-mix(in srgb, var(--colorBg), var(--lessTransparent)) !important;
+}
+
+.panel-group .sortselector.sortselector-compact, .download-popout .sortselector.sortselector-compact {
+    border: none; /* REMOVING BORDER OF SORT */
+}
+
+.panel-group .sortselector.sortselector-compact .sortselector-dropdown, .download-popout .sortselector.sortselector-compact .sortselector-dropdown {
+    border-radius: var(--radius); /* BORDER RADIUS OF SORT */
+}
+
+.sortselector {
+    background-color: color-mix(in srgb, var(--colorBg), var(--lessTransparent)); /* BG COLOR OF SORT */
+    height: calc(var(--treeViewRowHeight) - 4px); /* FIXING SORT */
+}
+
+.toolbar-default .button-toolbar > button:enabled { /* REMOVING BG OF BUTTONS */
+    background-image: none;
+}
+
+.toolbar-group > .button-toolbar:not(:last-child) > button, .toolbar-group hr:not(:last-child) > button { /* BORDER RADIUS FOR BUTTONS PART 1 */
+    border-top-right-radius: var(--radius);
+    border-bottom-right-radius: var(--radius); 
+}
+
+.toolbar-group > .button-toolbar + .button-toolbar > button, .toolbar-group hr + .button-toolbar > button { /* BORDER RADIUS FOR BUTTONS PART 2 */
+    border-top-left-radius: var(--radius);
+    border-bottom-left-radius: var(--radius);
 }
 
 /* WORKSPACES */
@@ -322,11 +366,6 @@ div#main.right #panels-container {
 .tab.active .favicon {
     filter: none !important; /* HIDE FAVICON WHITE BORDER */
 }
-
-.svg-tab-stack .stack-frame { /* BORDER COLOR OF TAB GROUP */
-    /* stroke: transparent; */
-    /* stroke-width: 2px; */
-} 
 
 #browser .tab-position.colored .tab:not(.active) {
     background-color: color-mix(in srgb, var(--colorBg), var(--lessTransparent));  /* BG COLOR OF TAB GROUP  */
@@ -442,32 +481,153 @@ button.ToolbarButton-Button[name="SyncedTabs"] span::before {
     box-shadow: none;
 }
 
+.SpeedDialView-Settings { /* ADJUSTING SETTINGS OF SPEED DIAL */
+    border-radius: var(--radius);
+    background-color:  color-mix(in srgb, var(--colorBg), var(--lessTransparent));
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+}
+
 /* BOOKMARKS PANEL */
 
+.item-count, .tree-item .nickname {
+    background-color:  color-mix(in srgb, var(--colorBg), var(--lessTransparent)); /*BG COLOR OF ITEM COUNT */
+}
+
 .panel-bookmarks .panel-bookmarks-edit {
-    padding-right: 12px; /* FIXING BOTTOM PART */
+    display: none; /* REMOVING BOTTOM PART */
 }
 
 /* DOWNLOAD PANEL */
 
+.toolbar-default .button-toolbar > button:disabled {
+    background-color: transparent; /* REMOVING BG OF DISABLED ICONS */
+}
+
+.hasfocus .vivaldi-tree:focus-within .tree-row[data-selected] .ActionButton svg {
+    fill: var(--colorFg); /* COLOR OF FOLDER ICON OF SELECTED ITEM WHEN BROWSER IS FOCUSED */
+}
+
 .download-editor.download-editor {
-    padding-right: 13px; /* FIXING BOTTOM PART */
+    display: none; /* REMOVING BOTTOM PART */
 }
 
 /* CALENDAR PANEL */
 
+.panel > header > .toolbar + .toolbar {
+    margin-top: 5px; /* ADJUSTING GAP OF EVERYTING IN HEADER */
+}
+
 .panel .calendar-grid-agenda {
-    padding-right: 12px; /* FIXING MIDDLE PART */
+    margin-top: 6px; /* ADJUSTING GAP ABOVE EVENTS IN AGENDA */
+}
+
+
+.FilterAndSearch-Input.FilterAndSearch-Input { /* RADIUS OF SEARCH BAR */
+    border-top-right-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+}
+
+.FilterAndSearch-Button.FilterAndSearch-Button { /* RADIUS OF SEARCH BUTTON */
+    border-top-left-radius: var(--radius);
+    border-bottom-left-radius: var(--radius);
+}
+
+input[type=button]:not(.circular), input[type=submit], input[type=color], .FormButton { /* BG COLOR OF SEARCH BUTTON */
+    background-image: none;
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+}
+
+.DatePickerPopup {
+    background-color:  color-mix(in srgb, var(--colorBg), var(--lessTransparent)); /* BG COLOR OF SELECTING WEEK WINDOW  PART 1 */
+}
+
+.DatePickerPopup .toolbar {
+    background-color: transparent; /* BG COLOR OF SELECTING WEEK WINDOW  PART 2 */
+}
+
+.button-popup-arrow-dark:before {
+    border-bottom-color: transparent; /* REMOVING ARROW */
+}
+
+#calendar_panel .PeriodPicker.PeriodPicker { /* FIXING BG OF PERIOD PICKER */
+    border-color: transparent;
+    background-image: none;
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+}
+
+.toolbar-default .button-toolbar > button:enabled.button-pressed { /* FIXING ACTIVE BUTTON */
+    background-image: none;
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+}
+
+#panels #calendar_panel .cal-tasks-row, #panels #tasks_panel .cal-tasks-row {
+    background-color:  color-mix(in srgb, var(--colorBg), var(--lessTransparent)); /* BG COLOR OF EVENTS */
+}
+
+.theme-dark .panel .SlideBar--FullWidth.alternate {
+    display: none; /* REMOVING SEPARATOR  DARK MODE */
+}
+
+.panel .SlideBar--FullWidth.alternate {
+    display: none; /* REMOVING SEPARATOR  LIGHT MODE */
 }
 
 .MonthDayPicker {
     margin-bottom: 0px; /* FIXING BOTTOM PART */
+    background-color:  color-mix(in srgb, var(--colorBg), var(--lessTransparent)); /* BG OF BOTTOM CALENDAR */
+}
+
+.CalendarPanel-MiniCalendar {
+    padding-top: 5px; /* ADJUSTING SPACE ABOVE BOTTOM CALENDAR */
+}
+
+.MonthDayPicker-Header {
+    padding-top: 3px; /* ADJUSTING PADDING OF HEADER IN BOTTOM CALENDAR */
+}
+
+.MonthDayPicker-Day--SelectedWeek {
+    border-radius: var(--radiusHalf); /* RADIUS OF SELECTED WEEK */
+}
+
+.calendar-grid-days.calendar-grid-week { 
+    margin-top: 5px; /* ADDING MARGIN TO WEEK CALENDAR */
+    padding-right: 12px;
+}
+
+.calendar-grid {
+    gap: 5px; /* ADJUSTING GAP OF WEEK CALENDAR */
+}
+
+.calendar-grid-days .calendar-drop-target {
+    border-radius: var(--radius); /* RADIUS OF DAYS IN WEEK CALENDAR */
+    border: none; /* ADJUSTING HIGHLIGHTED DAY IN WEEK CALENDAR  PART 1 */
+}
+
+.calendar-grid-days .calendar-drop-target .day.current { /* ADJUSTING HIGHLIGHTED DAY IN WEEK CALENDAR  PART 2 */
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.calendar-grid .calendar-drop-target { /* BG COLOR OF DAYS IN WEEK CALENDAR PART 1 */
+    background-color:  color-mix(in srgb, var(--colorBg), var(--lessTransparent));
+}
+
+.calendar-grid .calendar-drop-target.weekend { /* BG COLOR OF DAYS IN WEEK CALENDAR PART 2 */
+    background-color:  color-mix(in srgb, var(--colorBg), var(--lessTransparent));
+}
+
+.calendar-add-event-button { /* BG COLOR OF DAYS IN WEEK CALENDAR PART 3 */
+    background-image: none;
 }
 
 /* MAIL PANEL */
 
-.VivaldiList-Offset {
-    padding-right: 12px; /* FIXING POSITION */
+.toolbar-group > hr {
+    display: none; /* REMOVING HR BETWEEN BUTTONS */
 }
 
 /* CTRL+F */
@@ -496,9 +656,109 @@ input, select, textarea, .dateInput input[type=date], .dateInput input[type=time
 }
 
 input[type=radio], input[type=checkbox] {
-    box-shadow: none; /* REMOVE SHADOW FROM CHECKBOX */
+    box-shadow: none; /* REMOVE SHADOW FROM CHECKBOX LIGHT MODE */
+    background-color:  color-mix(in srgb, var(--colorBg), var(--lessTransparent));
 }
 
 .theme-dark input[type=radio], .theme-dark input[type=checkbox] {
     background-image: none; /* REMOVE SHADOW FROM CHECKBOX DARK MODE */
+    background-color:  color-mix(in srgb, var(--colorBg), var(--lessTransparent));
+}
+
+input[type=checkbox]:checked { /* BG COLOR OF CHECKED CHECKBOX */
+    background-color:  color-mix(in srgb, var(--colorBg), var(--lessTransparent));
+}
+
+input[type=radio]:checked, input[type=checkbox]:checked { /* BORDER COLOR OF CHECKED CHECKBOX */
+    border-color: transparent;
+}
+
+input[type=checkbox]:before, input[type=checkbox]:after { /* COLOR OF ICON IN CHECKBOX */
+    background-color: var(--colorFg);
+}
+
+/* CALENDAR NOTIFICATIONS */
+
+#modal-bg.calendar-alarm { /* REMOVING COLOR WHICH MADE BROWSER DARKER WHEN NOTIFICATION SHOWS */
+    background-color: transparent;
+}
+
+.CalendarNotifications { /* ADJUSTING BG OF CALENDAR NOTIFICATION */
+    background-color:  color-mix(in srgb, var(--colorHighlightBg), var(--lessTransparent));
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+}
+
+.dialog-footer { /* REMOVING BORDER AND BG COLOR  OF FOOTER OF NOTIFICATION*/
+    background-color: transparent;
+    border-top: none;
+}
+
+.dialog-header { /* ADJUSTING PADDING OF HEADER */
+    padding: 12px 12px 5px;
+}
+
+.CalendarNotification-Content { /* ADJUSTING MARGIN OF NAME OF EVENT */
+    margin: 0 5px 0 5px;
+}
+
+.dialog-double-header, .dialog-content, .dialog-footer { /* ADJUSTING PADDING OF FOOTER */
+    padding: 12px 12px;
+}
+
+/* WORKSPACES WINDOW + SOME ADJUSTING FOR PAGE TILING WINDOW */
+
+.button-popup { /* BG OF WORKSPACE WINDOW PART 1 */
+    background-color:  color-mix(in srgb, var(--colorBg), var(--lessTransparent));
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    width: 194px;
+}
+
+.theme-dark .WorkspacePopup { /* BG OF WORKSPACE WINDOW PART 2 DARK MODE */
+    background-color: transparent;
+}
+
+.WorkspacePopup { /* BG OF WORKSPACE WINDOW PART 2 LIGHT MODE */
+    background-color: transparent;
+}
+
+.theme-dark .WorkspacePopup-Items .workspace-item-wrapper, .theme-dark .WorkspacePopup-Items .this-window { /* BG OF WORKSPACES DARK MODE */
+    background-color: transparent;
+}
+
+.WorkspacePopup-Items .workspace-item-wrapper, .WorkspacePopup-Items .this-window { /* BG OF WORKSPACES LIGHT MODE */
+    background-color: transparent;
+}
+
+.WorkspacePopup-Items .workspace-item-wrapper .title .tab-count, .WorkspacePopup-Items .this-window .title .tab-count {
+    color: var(--colorFg); /* FONT COLOR OF NUMBER OF TABS */
+}
+
+.WorkspacePopup-Items { /* ADJUSTING PADDING OF WORKSPACES */
+    padding: 5px 5px 0;
+}
+
+.button-popup-right.button-popup-arrow-dark:before {
+    border-bottom-color: transparent; /* REMOVING ARROW */
+}
+
+.WorkspacePopup .actions { /* ADJUSTING PADDING OF NEW WORKSPACE BUTTON */
+    padding: 0px 5px 5px;
+}
+
+.WorkspacePopup-Items hr { /* AJDUSTING MARGIN OF SEPARATOR */
+    margin-top: 5px;
+    margin-bottom: 1px;
+}
+
+/* PAGE TILING WINDOW */
+
+.button-popup.ToolbarButtonPopup-DefaultStyles h2 { /* ADJUSTING PAGE TILING H2 */
+    background-color: transparent;
+    border-bottom: none;
+}
+
+.button-popup-arrow-light:before { /* REMOVING ARROW */
+    border-bottom-color: transparent;
 }
