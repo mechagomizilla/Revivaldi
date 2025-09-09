@@ -2,12 +2,10 @@
 
 zkusit upravit označený taby ctrl (asi nejde?)
 
-zkusit opravit tab tiles divnej padding (asi nejde?)
-
 
 
 modernizace:
-speed dial (opera? nebo inspirace jinde?)
+speed dial (inspirace jinde?)
 CTRL+E - jako workspace window? (Arc, Zen) - bacha, ovlivňuej všechny modální okna!
 ctrl+f (ARC?)??
 
@@ -15,7 +13,6 @@ ctrl+f (ARC?)??
 
 moooooooooooožnááá:
 arc like pinned taby?
-hover tab bar+panel (jen když jsou schované)??
 horizontal tabs???
 
 změnit ikonku vivaldi: https://forum.vivaldi.net/topic/66940/allow-to-change-vivaldi-icon/4
@@ -189,7 +186,7 @@ div#main.right #panels-container {
     background-color: var(--colorBg); /* CHANGING BG COLOR AND ICON COLOR WHEN BOOKMARK ICON IS ACTIVE */
 }
 
-/* WEBPANELS */
+/* WEB PANELS */
 
 #panels-container.right .panel {
     padding: 5px 13px 5px 5px; /* ADJUSTING ALL PANELS  PART 1 */
@@ -260,6 +257,10 @@ div#main.right #panels-container {
     height: calc(var(--treeViewRowHeight) - 4px); /* FIXING SORT */
 }
 
+.sortselector.sortselector-compact:hover { /* HOVER OF SORT */
+    background-color: var(--colorBg);
+}
+
 .toolbar-default .button-toolbar > button:enabled { /* REMOVING BG OF BUTTONS */
     background-image: none;
 }
@@ -272,6 +273,10 @@ div#main.right #panels-container {
 .toolbar-group > .button-toolbar + .button-toolbar > button, .toolbar-group hr + .button-toolbar > button { /* BORDER RADIUS FOR BUTTONS PART 2 */
     border-top-left-radius: var(--radius);
     border-bottom-left-radius: var(--radius);
+}
+
+.panel input, .find-in-page input {
+    background-color: color-mix(in srgb, var(--colorBg), var(--lessTransparent)); /* BG COLOR OF SEARCH BAR IN PANELS AND CTRL+F */
 }
 
 /* WORKSPACES */
@@ -327,9 +332,7 @@ div#main.right #panels-container {
 .separator hr { /* ADJUSTING SEPARATOR UNDER PINNED TABS */
     border: 1px solid color-mix(in srgb, var(--colorBg), var(--lessTransparent));
     background: color-mix(in srgb, var(--colorBg), var(--lessTransparent));
-    backdrop-filter: var(--blur);
-    -webkit-backdrop-filter: var(--blur);
-    opacity: 0.5;
+    opacity: 0.2;
     width: 100%;
     margin-top: 6px;
 } 
@@ -445,28 +448,28 @@ button.ToolbarButton-Button[name="SyncedTabs"] span::before {
 
 /* TAB TILES MODE */
 
-#browser .tile:has(> .tiled.webpageview) {
-    border: var(--mosaicPadding) solid transparent; /* FIXING TAB TILES PART 1 */
+#browser .tile:has(> .tiled.webpageview) { /* REMOVED DEFAULT BEHAVIOUR */
+  border: 0 solid transparent;
+}
+
+#browser .tiled:not(.webpageview) { /* INSTEAD OF DEFAULT BEHAVIOR IS GAP */
+  gap: 5px;
 }
 
 #browser:not(.inner, .narrow-tiling) #webpage-stack > .tiled.visible {
-    box-shadow: inset 0 0 0 var(--n6) transparent; /* FIXING TAB TILES PART 2 */
-}
-
-.tiled.webpageview:not(.active) {
-    box-shadow: none; /* FIXING TAB TILES PART 3 */
-}
-
-#browser:not(.inner, .narrow-tiling) #webpage-stack > .tiled.visible {
-    padding: 0; /* FIXING TAB TILES PART 4 */
+    box-shadow: inset 0 0 0 var(--n6) transparent; /* REMOVING SOME WEIRD SHADOW */
 }
 
 .hasfocus .webpageview.tiled.active {
-    box-shadow: 0 0 0 2px var(--colorHighlightBg); /* CHANGING COLOR OF BORDER OF ACTIVE WHEN BROWSER IS FOCUSED */
+    box-shadow: 0 0 0 2px var(--colorFg); /* CHANGING COLOR OF BORDER OF ACTIVE WHEN BROWSER IS FOCUSED */
 }
 
 .isblurred .webpageview.tiled.active {
-    box-shadow: 0 0 0 2px var(--colorHighlightBg); /* CHANGING COLOR OF BORDER OF ACTIVE WHEN BROWSER ISNT FOCUSED */
+    box-shadow: 0 0 0 2px var(--colorFg); /* CHANGING COLOR OF BORDER OF ACTIVE WHEN BROWSER ISNT FOCUSED */
+}
+
+.webpageview.tiled:not(.active) {
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--colorBg), var(--lessTransparent)); /* CHANGING COLOR OF BORDER OF NON ACTIVE */
 }
 
 /* SPEED DIAL */
@@ -507,6 +510,14 @@ button.ToolbarButton-Button[name="SyncedTabs"] span::before {
 
 .download-editor.download-editor {
     display: none; /* REMOVING BOTTOM PART */
+}
+
+input.circular, button.circular { /* ADJUSTING RADIUS OF HOVER OF DOWNLAOD FOLDER ICON */
+    border-radius: var(--radiusHalf);
+}
+
+.sortselector.sortselector-compact .sortselector-button { /* REMOVING BORDER IN SORT */
+    border-left: none;
 }
 
 /* CALENDAR PANEL */
@@ -562,7 +573,11 @@ input[type=button]:not(.circular), input[type=submit], input[type=color], .FormB
 }
 
 #panels #calendar_panel .cal-tasks-row, #panels #tasks_panel .cal-tasks-row {
-    background-color:  color-mix(in srgb, var(--colorBg), var(--lessTransparent)); /* BG COLOR OF EVENTS */
+    background-color:  color-mix(in srgb, var(--colorBg), var(--lessTransparent)); /* BG COLOR OF EVENTS IN AGENDA */
+}
+
+.calendar-grid-agenda .cal-tasks-row {
+    border-bottom: none; /* REMOVING BORDER OF EVENTS IN AGENDA */
 }
 
 .theme-dark .panel .SlideBar--FullWidth.alternate {
@@ -586,13 +601,17 @@ input[type=button]:not(.circular), input[type=submit], input[type=color], .FormB
     padding-top: 3px; /* ADJUSTING PADDING OF HEADER IN BOTTOM CALENDAR */
 }
 
+.MonthDayPicker-Header h2 { /* ADJUSTING POSITION OF MONTH IN BOTTOM CALENDAR */
+    font-weight: normal;
+    padding-right: 5px;
+}
+
 .MonthDayPicker-Day--SelectedWeek {
-    border-radius: var(--radiusHalf); /* RADIUS OF SELECTED WEEK */
+    border-radius: var(--radiusHalf); /* RADIUS OF SELECTED WEEK IN BOTTOM CALENDAR */
 }
 
 .calendar-grid-days.calendar-grid-week { 
-    margin-top: 5px; /* ADDING MARGIN TO WEEK CALENDAR */
-    padding-right: 12px;
+    margin-top: 6px; /* ADDING MARGIN TO WEEK CALENDAR */
 }
 
 .calendar-grid {
@@ -619,6 +638,20 @@ input[type=button]:not(.circular), input[type=submit], input[type=color], .FormB
 
 .calendar-add-event-button { /* BG COLOR OF DAYS IN WEEK CALENDAR PART 3 */
     background-image: none;
+}
+
+.calendar-add-event-button { /* REMOVING BORDER AND CHANGING RADIUS IN WEEK CALENDAR */
+    border: none;
+    border-radius: var(--radius);
+}
+
+.calendar-grid-day { /* ADJUSTING POSITION OF MIDDLE PART IN DAY CALENDAR */
+    margin-top: 6px;
+}
+
+.calendar-grid .calendar-header-date { /* ADDING RADIUS TO HEADER IN DAY CALENDAR */
+    outline: none;
+    border-radius: var(--radius);
 }
 
 /* MAIL PANEL */
