@@ -5,9 +5,12 @@ zkusit upravit označený taby ctrl (asi nejde?)
 
 
 modernizace:
+download menu
+Nastavení panelu
+smazání workspacu
+CTRL+E - jako workspace window? (Arc, Zen) - bacha, ovlivňuej všechny modální okna! (nastavení panelu, smazání workspacu, atd.)
+jaký další modální okna???
 speed dial (inspirace jinde?)
-CTRL+E - jako workspace window? (Arc, Zen) - bacha, ovlivňuej všechny modální okna!
-ctrl+f (ARC?)??
 
 
 
@@ -331,7 +334,7 @@ input.circular, button.circular { /* ADJUSTING RADIUS OF HOVER OF DOWNLAOD FOLDE
     border-bottom-left-radius: var(--radius);
 }
 
-input[type=button]:not(.circular), input[type=submit], input[type=color], .FormButton { /* BG COLOR OF SEARCH BUTTON */
+#calendar_panel input[type=button]:not(.circular), #calendar_panel input[type=submit], #calendar_panel input[type=color], #calendar_panel .FormButton { /* BG COLOR OF SEARCH BUTTON */
     background-image: none;
     backdrop-filter: var(--blur);
     -webkit-backdrop-filter: var(--blur);
@@ -472,7 +475,7 @@ input[type=button]:not(.circular), input[type=submit], input[type=color], .FormB
 /* WORKSPACES WINDOW + SOME ADJUSTING FOR PAGE TILING WINDOW */
 
 .button-popup { /* BG OF WORKSPACE WINDOW PART 1 */
-    background-color:  color-mix(in srgb, var(--colorBg), var(--lessTransparent));
+    background-color:  color-mix(in srgb, var(--colorHighlightBg), var(--lessTransparent));
     backdrop-filter: var(--blur);
     -webkit-backdrop-filter: var(--blur);
     width: 194px;
@@ -486,12 +489,19 @@ input[type=button]:not(.circular), input[type=submit], input[type=color], .FormB
     background-color: transparent;
 }
 
+.WorkspacePopup-Items .workspace-item-wrapper .checkmark, .WorkspacePopup-Items .this-window .checkmark { /* ADJUSTING CHECKMARK OF ACTIVE WORKSPACE */
+    margin-right: 11px;
+    fill: var(--colorFg);
+}
+
 .theme-dark .WorkspacePopup-Items .workspace-item-wrapper, .theme-dark .WorkspacePopup-Items .this-window { /* BG OF WORKSPACES DARK MODE */
     background-color: transparent;
+    padding: 3px;
 }
 
 .WorkspacePopup-Items .workspace-item-wrapper, .WorkspacePopup-Items .this-window { /* BG OF WORKSPACES LIGHT MODE */
     background-color: transparent;
+    padding: 3px;
 }
 
 .WorkspacePopup-Items .workspace-item-wrapper .title .tab-count, .WorkspacePopup-Items .this-window .title .tab-count {
@@ -507,7 +517,16 @@ input[type=button]:not(.circular), input[type=submit], input[type=color], .FormB
 }
 
 .WorkspacePopup .actions { /* ADJUSTING PADDING OF NEW WORKSPACE BUTTON */
+    margin-top: -4px;
     padding: 0px 5px 5px;
+}
+
+.WorkspacePopup .button-toolbar > button { /* BG COLOR OF NEW WORKSPACE BUTTON PART 1 */
+    background-color: color-mix(in srgb, var(--colorBg), var(--lessTransparent));
+}
+
+.WorkspacePopup .FormButton { /* BG COLOR OF NEW WORKSPACE BUTTON PART 2 */
+    background-image: none;
 }
 
 .WorkspacePopup-Items hr { /* AJDUSTING MARGIN OF SEPARATOR */
@@ -619,6 +638,7 @@ input[type=button]:not(.circular), input[type=submit], input[type=color], .FormB
 
 #browser .tab-position.colored .stack-counter {
     background-color: var(--colorHighlightBg); /* BG COLOR OF TAB GROUP NUMBER */
+    color: var(--colorAccentBg);
 }
 
 .tabs-left #tabs-container .toolbar-tabbar-after, .tabs-right #tabs-container .toolbar-tabbar-after {
@@ -716,6 +736,62 @@ button.ToolbarButton-Button[name="SyncedTabs"] span::before {
     -webkit-backdrop-filter: var(--blur);
 }
 
+.SpeedDialView-Settings .close { /* REMOVING BG AROUND CLOSE BUTTON */
+    background-color: transparent;
+}
+
+.SpeedDialView-Settings .close:hover { /* REMOVING HOVER BG AROUND CLOSE BUTTON */
+    background-color: transparent;
+}
+
+.SpeedDialView-Settings a:-webkit-any-link { /* COLOR OF LINK */
+    color: var(--colorFg);
+}
+
+.SpeedDialView-Settings hr { /* HIDING HR IN SPEED DIAL SETTINS */
+    border: transparent;
+}
+
+.SpeedDialView-Settings input:not(.Switch-Input) {
+    background-color:  color-mix(in srgb, var(--colorBg), var(--lessTransparent)); /* CHANING BG COLOR OF SELECT IMAGE PART 1 */
+}
+
+.SpeedDialView-Settings input[type=button]:not(.circular):not(:disabled,:hover) {
+    background-image: none; /* CHANING BG COLOR OF SELECT IMAGE PART 2 */
+}
+
+.SpeedDialView-Settings select { /* CHANGING BG COLOR OF SELECTS PART 1 */
+    background-color:  color-mix(in srgb, var(--colorBg), var(--lessTransparent));
+}
+
+select:enabled:not([multiple], [size]), .SpeedDialView-Settings .VivaldiSelector:not(:focus-within) .Inner__control {
+    background-image: none; /* CHANGING BG COLOR OF SELECTS PART 2 */
+}
+
+#browser .Switch .Switch-Input {
+    box-shadow: none; /* REMOVING SHADOW FROM SWITCH PART 1 */
+}
+
+#browser .Switch-Input {
+    box-shadow: none; /* REMOVING SHADOW FROM SWITCH PART 2 */
+}
+
+.theme-dark#browser .Switch-Input:not(:checked) { /* CHANGING BG COLOR OF UNCHECKED SWITCH DARK MODE */
+    background-color: color-mix(in srgb, var(--colorBg), var(--lessTransparent));
+}
+
+#browser .Switch-Input:not(:checked) { /* CHANGING BG COLOR OF UNCHECKED SWITCH LIGHT MODE*/
+    background-color: color-mix(in srgb, var(--colorBg), var(--lessTransparent));
+}
+
+#browser .Switch-Input:not(:checked) + .Switch-Button { /* CHANGING COLOR FROM DOT OF UNCHECKED SWITCH */
+    background-color: var(--colorFg);
+}
+
+#browser .Switch-Button { /* REMOVING SHADOW FROM DOT OF SWITCH */
+    box-shadow: none;
+}
+
 /* CTRL+F */
 
 .find-in-page-wrapper {
@@ -731,10 +807,6 @@ input[type=tel], input[type=text], input[type=search], input[type=email], input[
 
 button, input, select, textarea, input[type=text], input[type=search], input[type=password], input[type=email], input[type=url], input[type=number], input[type=radio], input[type=date], input[type=time], input[type=checkbox], input[type=button], input[type=submit] {
     border-color: transparent; /* REMOVE BORDER FROM SEARCH BAR */
-}
-
-input, select, textarea, .dateInput input[type=date], .dateInput input[type=time] {
-    background-color: var(--colorBg); /* CHANGING BG COLOR OF SEARCH BAR */
 }
 
 :focus-visible {
@@ -770,7 +842,7 @@ input[type=checkbox]:before, input[type=checkbox]:after { /* COLOR OF ICON IN CH
 }
 
 .CalendarNotifications { /* ADJUSTING BG OF CALENDAR NOTIFICATION */
-    background-color:  color-mix(in srgb, var(--colorBg), var(--lessTransparent));
+    background-color:  color-mix(in srgb, var(--colorHighlightBg), var(--lessTransparent));
     backdrop-filter: var(--blur);
     -webkit-backdrop-filter: var(--blur);
 }
@@ -790,4 +862,22 @@ input[type=checkbox]:before, input[type=checkbox]:after { /* COLOR OF ICON IN CH
 
 .dialog-double-header, .dialog-content, .dialog-footer { /* ADJUSTING PADDING OF FOOTER */
     padding: 12px 12px;
+}
+
+.calendar-alarm input, .calendar-alarm select { /* CHANGING COLOR OF BUTTONS PART 1 */
+    background-color:  color-mix(in srgb, var(--colorBg), var(--lessTransparent));
+}
+
+.calendar-alarm input[type=button]:not(.circular) { /* CHANGING COLOR OF BUTTONS PART 2 */
+    background-image: none;
+}
+
+.calendar-alarm input[type=button]:not(.circular).primary { /* ADJUSTING DISMISS BUTTON */
+    color: var(--colorFg);
+    border-color: transparent;
+}
+
+.calendar-alarm input[type=button]:not(.circular).primary:hover { /* ADJUSTING HOVER OF DISMISS BUTTON */
+    background: var(--colorBg);
+    border-color: transparent;
 }
