@@ -496,12 +496,12 @@ input.circular, button.circular { /* ADJUSTING RADIUS OF HOVER OF DOWNLAOD FOLDE
 
 .theme-dark .WorkspacePopup-Items .workspace-item-wrapper, .theme-dark .WorkspacePopup-Items .this-window { /* BG OF WORKSPACES DARK MODE */
     background-color: transparent;
-    padding: 3px;
+    padding: 4px;
 }
 
 .WorkspacePopup-Items .workspace-item-wrapper, .WorkspacePopup-Items .this-window { /* BG OF WORKSPACES LIGHT MODE */
     background-color: transparent;
-    padding: 3px;
+    padding: 4px;
 }
 
 .WorkspacePopup-Items .workspace-item-wrapper .title .tab-count, .WorkspacePopup-Items .this-window .title .tab-count {
