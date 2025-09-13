@@ -1,13 +1,15 @@
 /* TODO
 
+opravit:
 zkusit upravit označený taby ctrl (asi nejde?)
 
 
 
 modernizace:
-download menu
-Nastavení panelu
-smazání workspacu
+download menu okno
+Nastavení panelu okno
+smazání workspacu okno
+vytváření nové web app
 CTRL+E - jako workspace window? (Arc, Zen) - bacha, ovlivňuej všechny modální okna! (nastavení panelu, smazání workspacu, atd.)
 jaký další modální okna???
 speed dial (inspirace jinde?)
@@ -16,8 +18,6 @@ speed dial (inspirace jinde?)
 
 moooooooooooožnááá:
 arc like pinned taby?
-
-změnit ikonku vivaldi: https://forum.vivaldi.net/topic/66940/allow-to-change-vivaldi-icon/4
 
 */ 
 
@@ -478,7 +478,7 @@ input.circular, button.circular { /* ADJUSTING RADIUS OF HOVER OF DOWNLAOD FOLDE
     background-color:  color-mix(in srgb, var(--colorHighlightBg), var(--lessTransparent));
     backdrop-filter: var(--blur);
     -webkit-backdrop-filter: var(--blur);
-    width: 194px;
+    /* width: 194px; */
 }
 
 .theme-dark .WorkspacePopup { /* BG OF WORKSPACE WINDOW PART 2 DARK MODE */
@@ -491,6 +491,7 @@ input.circular, button.circular { /* ADJUSTING RADIUS OF HOVER OF DOWNLAOD FOLDE
 
 .WorkspacePopup-Items .workspace-item-wrapper .checkmark, .WorkspacePopup-Items .this-window .checkmark { /* ADJUSTING CHECKMARK OF ACTIVE WORKSPACE */
     margin-right: 11px;
+    margin-top: 3px;
     fill: var(--colorFg);
 }
 
@@ -508,17 +509,8 @@ input.circular, button.circular { /* ADJUSTING RADIUS OF HOVER OF DOWNLAOD FOLDE
     color: var(--colorFg); /* FONT COLOR OF NUMBER OF TABS */
 }
 
-.WorkspacePopup-Items { /* ADJUSTING PADDING OF WORKSPACES */
-    padding: 5px 5px 0;
-}
-
 .button-popup-right.button-popup-arrow-dark:before {
     border-bottom-color: transparent; /* REMOVING ARROW */
-}
-
-.WorkspacePopup .actions { /* ADJUSTING PADDING OF NEW WORKSPACE BUTTON */
-    margin-top: -4px;
-    padding: 0px 5px 5px;
 }
 
 .WorkspacePopup .button-toolbar > button { /* BG COLOR OF NEW WORKSPACE BUTTON PART 1 */
@@ -532,6 +524,70 @@ input.circular, button.circular { /* ADJUSTING RADIUS OF HOVER OF DOWNLAOD FOLDE
 .WorkspacePopup-Items hr { /* AJDUSTING MARGIN OF SEPARATOR */
     margin-top: 5px;
     margin-bottom: 1px;
+}  
+
+:not(:active, .workspace-item-wrapper).WorkspacePopup-Items .workspace-item-wrapper:hover { /* REMOVING HOVER FROM EDITOR OF BG PART 1 */
+    background-color:  transparent;
+}
+
+.WorkspacePopup-Items .workspace-item-wrapper:hover:not(.Workspace-Editor.workspace-item-wrapper) { /* REMOVING HOVER FROM EDITOR OF BG PART 2 */
+    background-color: var(--colorBg) !important;
+}
+
+.WorkspacePopup-Items .workspace-item-wrapper input:focus, .WorkspacePopup-Items .workspace-item-wrapper input { /* CHANGING BG COLOR OF INPUT BAR OF NEW WORKSPACE NAME */
+    background-color: color-mix(in srgb, var(--colorBg), var(--lessTransparent));
+}
+
+.Workspace-Editor.workspace-item-wrapper .workspace-buttons { 
+    border: none; /* REMOVING BORDER AROUND ICON EMOJI BUTTONS */
+}
+
+.Workspace-Editor.workspace-item-wrapper .workspace-buttons input.active { /* CHANGING BG COLOR OF ACTIVE ICON EMOJI BUTTON */
+    background-color: var(--colorBg);
+}
+
+.Workspace-Editor.workspace-item-wrapper .workspace-buttons input { /* CHANGING BG COLOR OF NON-ACTIVE ICON EMOJI BUTTON */
+    background-color: color-mix(in srgb, var(--colorBg), var(--lessTransparent));
+}
+
+.Workspace-Editor.workspace-item-wrapper .workspace-buttons input:hover { /* CHANGING HOVER OF BG COLOR OF NON-ACTIVE ICON EMOJI BUTTON */
+    background-color: var(--colorBg);
+}
+
+.Workspace-Editor.workspace-item-wrapper input[type=button]:not(.circular) { /* REMOVING BG IMAGE OF ICON EMOJI BUTTON */
+    background-image: none;
+}
+
+.Workspace-Editor.workspace-item-wrapper .workspaces input[type='text'] { /* ADJUSTING INPUT ANY EMOJI */
+    border: none;
+    background-color:  color-mix(in srgb, var(--colorBg), var(--lessTransparent));
+}
+
+.WorkspacePopup input { /* CHANING BG COLOR OF BUTTONS IN CREATE NEW WORKSPACE PART 1 */
+    background-color: color-mix(in srgb, var(--colorBg), var(--lessTransparent));
+}
+
+.WorkspacePopup input[type=button]:not(.circular) { /* CHANING BG COLOR OF BUTTONS IN CREATE NEW WORKSPACE PART 1 */
+    background-image: none;
+}
+
+.WorkspacePopup input[type=button]:not(.circular).primary { /* ADJUSTING CREATE BUTTON */
+    color: var(--colorFg);
+    border-color: transparent;
+}
+
+.WorkspacePopup input[type=button]:not(.circular).primary:hover { /* ADJUSTING HOVER OF CREATE BUTTON */
+    color: var(--colorFg);
+    background: var(--colorBg);
+    border-color: transparent;
+}
+
+.Workspace-Editor.workspace-item-wrapper .workspaces input[type='submit'] { /* REMOVING BORDER OF DONE BUTTON */
+    border-color: transparent;
+}
+
+.WorkspacePopup input[type=submit] { /* ADJUSTING DONE BUTTON */
+    background-image: none;
 }
 
 /* PAGE TILING WINDOW */
