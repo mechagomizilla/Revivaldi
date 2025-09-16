@@ -1,0 +1,863 @@
+/* TODO: Colors for in-page search / panel buttons and field. */
+
+/*Fonts*/
+#browser.win, #browser.win button, #browser.win input, #browser.win select, #browser.win textarea {
+    font-family: 'Segoe UI', system-ui, sans-serif !important;
+}
+
+/*Header (tabbar)*/
+#header {
+    min-height: 42px !important;
+    background-color: var(--colorBg);
+}
+#browser.fullscreen #header {
+    min-height: 0 !important;
+}
+#browser:not(.transparent-tabbar).tabs-top #header {
+    background-color: var(--colorBg);
+}
+#titlebar {
+    height: 42px !important;
+}
+#titlebar #pagetitle {
+    height: 42px;
+}
+#browser.win.address-top #titlebar #pagetitle {
+    top: 0px;
+}
+.toolbar-tabbar {
+    min-height: 30px;
+}
+.toolbar-tabbar > .button-toolbar > button, .toolbar-tabbar > .toolbar-group > .button-toolbar > button {
+    min-width: 30px;
+    min-height: 30px;
+}
+.settings-header {
+    height: 34px !important;
+}
+#browser.win .window-buttongroup {
+    line-height: inherit;
+}
+.popup #pagetitle {
+    padding-left: 24px !important;
+}
+
+/*Menu button*/
+.vivaldi, .tabs-top.tabs-at-edge.fullscreen .vivaldi, 
+.tabs-top.tabs-at-edge.maximized .vivaldi, 
+.tabs-top.fullscreen .vivaldi, 
+.tabs-top.maximized .vivaldi, 
+#browser:not(.tabs-top) .vivaldi {
+    height: 34px !important;
+    width: 34px !important;
+    margin: 4px;
+    margin-left: 4px !important;
+    margin-top: 4px !important;
+}
+.tabs-left .vivaldi svg, .tabs-right .vivaldi svg, .tabs-bottom .vivaldi svg, .tabs-off .vivaldi svg {
+    width: 22px;
+    height: 22px;
+    margin-top: 0px;
+}
+/* Remove expand arrow next to the Vivaldi icon */
+.vivaldi .expand-arrow {
+    display: none;
+}
+.color-behind-tabs-on .vivaldi:hover,
+.color-behind-tabs-on .vivaldi:focus-visible,
+.color-behind-tabs-off .vivaldi:hover,
+.color-behind-tabs-off .vivaldi:focus-visible,
+.transparent-tabbar:not(.acc-dark.bg-dark.color-accent-from-page.color-behind-tabs-on) .vivaldi:hover,
+.transparent-tabbar:not(.acc-dark.bg-dark.color-accent-from-page.color-behind-tabs-on) .vivaldi:focus-visible, 
+#browser.color-behind-tabs-off .toolbar-mainbar .vivaldi:hover, 
+#browser:not(.tabs-top) .vivaldi:hover, #browser:not(.tabs-top) .vivaldi:focus-visible {
+    background-color: transparent;
+}
+.vivaldi span {
+    padding: 6px;
+    border-radius: var(--radiusCap);
+    background-color: transparent;
+    transition: background-color 0.15s ease-in !important;
+}
+.vivaldi:hover span,
+.vivaldi:focus span,
+.vivaldi:focus-visible span,
+.transparent-tabbar:not(.acc-dark.bg-dark.color-accent-from-page.color-behind-tabs-on) .vivaldi:hover span,
+.transparent-tabbar:not(.acc-dark.bg-dark.color-accent-from-page.color-behind-tabs-on) .vivaldi:focus span,
+.transparent-tabbar:not(.acc-dark.bg-dark.color-accent-from-page.color-behind-tabs-on) .vivaldi:focus-visible span {
+    background-color: var(--colorHighlightBgDark);
+    transition: background-color 0.15s ease-in !important;
+}
+
+/*Workspaces*/
+.tabbar-workspace-button, .tabbar-workspace-button .ToolbarButton-Button {
+    height: 42px !important;
+}
+
+/*Tabs*/
+.tabs-top.density-on #tabs-container .tab {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-top: -2px;
+    margin-bottom: -2px;
+}
+.tabs-top .svg-tab-stack, .tabs-top .svg-tab-selection {
+    height: 34px !important;
+    margin-top: -2px !important;
+    max-height: 34px !important;
+}
+.tabs-top.density-on #tabs-container .tab-yield-space {
+    height: 33px !important;
+    margin-top: -1px;
+}
+#tabs-container:not(.none).top {
+    padding-left: 34px !important;
+}
+.tabs-top #tabs-container .toolbar-tabbar-before:empty, .tabs-top #tabs-container .toolbar-tabbar-after:empty, .tabs-bottom #tabs-container .toolbar-tabbar-before:empty, .tabs-bottom #tabs-container .toolbar-tabbar-after:empty {
+    min-width: 4px;
+}
+.density-on.tabs-top .tab-wrapper, .density-on.tabs-bottom .tab-wrapper {
+    margin: 0 0 4px 4px;
+}
+.tabs-top.density-on .tab:not(.tab-in-accordion), .tabs-bottom.density-on .tab:not(.tab-in-accordion) {
+    max-width: calc(var(--Width) - 4px);
+}
+.tabs-top:not(.density-on) .tab-position .tab, .tabs-bottom:not(.density-on) .tab-position .tab {
+    max-width: calc(var(--Width) - 4px);
+}
+#browser:not(.transparent-tabbar).win10.normal #tabs-tabbar-container.top,
+#browser:not(.transparent-tabbar).win.normal #tabs-tabbar-container.top,
+#browser:not(.transparent-tabbar).linux.normal #tabs-tabbar-container.top, 
+#browser:not(.transparent-tabbar).tabs-at-edge #tabs-tabbar-container.top, 
+#browser:not(.transparent-tabbar) #tabs-tabbar-container.top {
+    border-bottom: 0px solid var(--colorBg) !important;
+}
+#browser.transparent-tabbar.win10.normal #tabs-tabbar-container,
+#browser.transparent-tabbar.win.normal #tabs-tabbar-container,
+#browser.transparent-tabbar.linux.normal #tabs-tabbar-container, 
+#browser.transparent-tabbar.tabs-at-edge #tabs-tabbar-container, 
+#browser.transparent-tabbar #tabs-tabbar-container {
+    background-color: var(--colorBgAlphaBlur);
+}
+#tabs-container .resize {
+    align-items: center;
+}
+.tab-strip {
+    min-height: 30px;
+}
+.tab, .tabbar-wrapper, .density-on .tabbar-wrapper {
+    border-radius: var(--radiusHalf) !important;
+}
+.tab.active,
+.tab-position.is-substack .tab {
+    box-shadow: 0 0 4px rgba(0,0,0,.4);
+}
+.tab-position .tab .tab-header {
+    align-items: center;
+}
+.transparent-tabbar .tab-position .tab.active .tab-header .favicon:not(.svg), 
+.theme-dark .tab-position .tab.active .tab-header .favicon:not(.svg), 
+.acc-dark.color-behind-tabs-off .tab-position .tab.active .tab-header .favicon:not(.svg) {
+    filter: none;
+}
+.close {
+    background-color: transparent;
+    transition: background-color 0.15s ease-out !important;
+}
+.close:hover, .close:active {
+    transition: background-color 0.15s ease-in !important;
+}
+.close,
+.stack-counter {
+    border-radius: var(--radius) !important;
+}
+.tab-yield-space {
+    border-radius: var(--radiusHalf) !important;
+    margin-left: 4px;
+    height: 29px !important;
+    margin-top: 1px;
+    width: calc(var(--Width) - 4px) !important;
+}
+.svg-tab-stack,
+.svg-tab-selection {
+    border-radius: var(--radiusHalf);
+    width: calc(var(--Width) - 4px) !important;
+}
+.svg-tab-stack rect,
+.svg-tab-selection rect {
+    rx: var(--radiusHalf);
+    ry: var(--radiusHalf);
+}
+.color-behind-tabs-off .svg-tab-stack .stack-frame, 
+.color-behind-tabs-on .tab.active .svg-tab-stack .stack-frame {
+    stroke: var(--colorAccentBgFadedMore);
+}
+.tabs-top .tab-position.is-substack .tab:not(.active) .svg-tab-stack,
+.tabs-top .tab-position.is-substack .tab:not(.active) .svg-tab-selection,
+.tabs-top .tab-position:not(.is-substack) .svg-tab-stack,
+.tabs-top .tab-position:not(.is-substack) .svg-tab-selection {
+    padding-bottom: 0px;
+}
+.tabs-bottom .tab-position.is-substack .tab:not(.active) .svg-tab-stack,
+.tabs-bottom .tab-position.is-substack .tab:not(.active) .svg-tab-selection,
+.tabs-bottom .tab-position:not(.is-substack) .svg-tab-stack,
+.tabs-bottom .tab-position:not(.is-substack) .svg-tab-selection {
+    padding-top: 0px;
+}
+#browser#browser .tab.tab-acceptsdrop:after {
+    border-radius: var(--radiusHalf);
+    outline: var(--colorAccentBgFadedMore) 3px solid;
+    margin-bottom: -1px;
+}
+.color-behind-tabs-on #tabs-subcontainer.top,
+.color-behind-tabs-off #tabs-subcontainer.top,
+.transparent-tabbar #tabs-subcontainer.top,
+.color-behind-tabs-on #tabs-subcontainer.bottom,
+.color-behind-tabs-off #tabs-subcontainer.bottom,
+#tabs-subcontainer.left,
+#tabs-subcontainer.right,
+.color-behind-tabs-off #tabs-subcontainer.left,
+.color-behind-tabs-off #tabs-subcontainer.right {
+    box-shadow: none;
+}
+.color-behind-tabs-off #tabs-subcontainer,
+.transparent-tabbar #tabs-subcontainer,
+.theme-dark.color-behind-tabs-off #tabs-subcontainer, 
+.theme-dark.transparent-tabbar #tabs-subcontainer {
+    background-color: transparent;
+    backdrop-filter: none;
+}
+.color-behind-tabs-off .tab-position .tab.unread {
+    background-image: linear-gradient(var(--colorHighlightBgDark) 2px, transparent 2px);
+    background-position: top 2px left 50%;
+    background-size: 48% 2px;
+}
+.color-behind-tabs-off .tab-position:hover .tab.unread {
+    background-image: linear-gradient(var(--colorHighlightFgAlpha) 2px, transparent 2px);
+    background-position: top 2px left 50%;
+    background-size: 48% 2px;
+}
+.color-behind-tabs-on .tab-position .tab.unread {
+    background-image: linear-gradient(var(--colorAccentFgAlpha) 2px, transparent 2px);
+    background-position: top 2px left 50%;
+    background-size: 48% 2px;
+}
+.color-behind-tabs-off .tab-position:hover .tab:not(.active),
+.color-behind-tabs-off .tab-position .tab:hover:not(.active) {
+    background-color: var(--colorHighlightBgDark) !important;
+    box-shadow: 0 0 4px rgba(0,0,0,.4);
+    transition: background-color 0.15s ease-in !important;
+}
+.color-behind-tabs-on .tab-position:hover .tab:not(.active),
+.color-behind-tabs-on .tab-position .tab:hover:not(.active) {
+    background-color: var(--colorHighlightBgDark) !important;
+    box-shadow: 0 0 4px rgba(0,0,0,.4);
+    transition: background-color 0.15s ease-in !important;
+}
+.tab-position .tab:not(.active){
+    transition: background-color 0.15s ease-out !important;
+}
+.tab-position .tab .title {
+    line-height: 17px;
+}
+
+/*Newtab button*/
+.button-toolbar.newtab {
+    top: 0px !important;
+    height: 100% !important;
+}
+#tabs-subcontainer .button-toolbar.newtab {
+    height: 30px !important;
+}
+
+/*Window buttons*/
+#browser.win.win10.tabs-top #header #titlebar .window-buttongroup button:not(.vivaldi), 
+.tabs-right#browser.win.win10 .tabs-bottom#browser.win.win10 .tabs-left#browser.win.win10, 
+#browser.win.win10 #header #titlebar .window-buttongroup button, 
+#browser.win.tabs-top #header #titlebar .window-buttongroup button, 
+#browser.win.win10 .window-buttongroup button, 
+#browser .window-buttongroup button,
+.tabs-at-edge.fullscreen#browser.win.win10.tabs-top #header #titlebar .window-buttongroup button:not(.vivaldi), 
+.tabs-at-edge.maximized#browser.win.win10.tabs-top #header #titlebar .window-buttongroup button:not(.vivaldi), 
+.fullscreen#browser.win.win10.tabs-top #header #titlebar .window-buttongroup button:not(.vivaldi), 
+.maximized#browser.win.win10.tabs-top #header #titlebar .window-buttongroup button:not(.vivaldi) {
+    height: 42px !important;
+    width: 45px;
+}
+
+/*Address bar*/
+.address-top#browser.tabs-off.popup .toolbar-mainbar {
+    margin-top: 0px;
+}
+#browser.tabs-off.popup .toolbar-mainbar {
+    padding-left: 0px;
+}
+#browser.tabs-off.popup .toolbar-mainbar:not(.toolbar-wrap) {
+    padding-left: 3px;
+}
+.toolbar-mainbar .toolbar-extensions .button-toolbar button, 
+.toolbar-mainbar .button-toolbar button, 
+.toolbar-mainbar .toolbar-extensions .toolbar-group .button-toolbar button, 
+.toolbar-mainbar .toolbar-group .button-toolbar button {
+    height: 34px;
+    min-width: 34px;
+    border-radius: var(--radiusCap);
+}
+.toolbar-mainbar .UrlBar-AddressField .button-toolbar button {
+    height: 22px;
+    min-width: 22px;
+    margin-top: 0;
+    line-height: 22px;
+}
+.toolbar-mainbar .UrlBar-AddressField .toolbar-insideinput:first-of-type {
+    margin-left: 3px;
+}
+.toolbar-mainbar .UrlBar-AddressField .toolbar-insideinput:last-of-type {
+    margin-right: 3px;
+}
+.button-toolbar > button,
+.BookmarkButton-Button .ToolbarButton-Button {
+    border-width: 0px !important;
+    box-shadow: none !important;
+}
+.BookmarkButton-Button .ToolbarButton-Button{
+    border-radius: var(--radius) !important;
+}
+.BookmarkButton {
+    border-width: 0px !important;
+    border-radius: var(--radius) !important;
+}
+.button-popup {
+    border-radius: var(--radiusCap) !important;
+}
+.extensionIconPopupMenu .toolbar {
+    outline: none;
+}
+.extensionIconPopupMenu .button-toolbar button {
+    margin-top: 0;
+}
+.UrlBar-SearchField, .UrlBar-AddressField {
+    height: 34px !important;
+    margin: 0 4px;
+    padding: 0 2px !important;
+}
+.UrlBar-AddressField .pageload .pageload-indicator {
+    height: 34px;
+    inset: 0px;
+    border-radius: var(--radius) !important;
+}
+.address-top .mainbar > .toolbar-mainbar {
+    border-bottom: 1px solid transparent;
+}
+.color-behind-tabs-off.address-top .mainbar > .toolbar-mainbar, .color-behind-tabs-on.address-top .mainbar > .toolbar-mainbar {
+    border-color: transparent;
+}
+.address-top .toolbar-mainbar .toolbar-extensions::after, 
+.address-top .toolbar-mainbar::after, 
+.toolbar-mainbar .toolbar-extensions::after, 
+.toolbar-mainbar::after,
+.address-top .mainbar > .toolbar-mainbar .toolbar-extensions::before, 
+.address-top .mainbar > .toolbar-mainbar::before,
+.toolbar-mainbar .toolbar-extensions::before, 
+.toolbar-mainbar::before {
+    height: 0 !important;
+}
+#browser.tabs-off.color-behind-tabs-off.popup:not(.fullscreen) #header, #browser.tabs-off.color-behind-tabs-off.popup.isblurred #header {
+    background-color: var(--colorBg);
+}
+#browser.tabs-off.color-behind-tabs-on.popup:not(.fullscreen) #header, #browser.tabs-off.color-behind-tabs-on.popup.isblurred #header {
+    background-color: var(--colorAccentBg);
+}
+#browser.tabs-off.color-behind-tabs-off.popup.isblurred .toolbar-mainbar {
+    background-color: transparent;
+}
+#browser.tabs-off.color-behind-tabs-on.popup.isblurred .toolbar-mainbar {
+    background-color: transparent;
+}
+.toolbar-large .button-toolbar > button > .button-badge {
+    top: 2px;
+    right: 5px;
+    border-radius: var(--radius);
+    line-height: 14px;
+}
+.extensionIconPopupMenu .button-toolbar > button > .button-badge {
+    top: 2px;
+    right: 5px;
+    border-radius: var(--radius);
+    line-height: 14px;
+}
+.color-behind-tabs-off .toolbar-mainbar .button-badge {
+    color: var(--colorFg) !important;
+    background-color: var(--colorBg) !important;
+    border: 0px solid transparent;
+}
+.color-behind-tabs-on .toolbar-mainbar .button-badge {
+    color: var(--colorHighlightFg) !important;
+    background-color: var(--colorHighlightBgFaded) !important;
+    border: 0px solid transparent;
+}
+.toolbar-extensions .button-badge {
+    box-shadow: 0 0px rgba(0, 0, 0, 0);
+}
+.button-popup:before {
+    filter: drop-shadow(0 -1px var(--colorBgLight));
+}
+.extension-popup.top:before {
+    border-bottom-color: var(--colorBgLight);
+    top: -15px;
+}
+.extension-popup.top {
+    margin-top: 2px;
+}
+.extension-popup {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    border-radius: var(--radius);
+}
+.extension-popup > webview {
+    border-radius: var(--radius);
+    outline: 4px solid var(--colorBgLight);
+    outline-offset: -1px;
+}
+.address-top .mainbar {
+    border-bottom: 0px solid var(--colorBorder);
+}
+/* Change adress bar and dropdown menu's background color and style */
+.SearchField:has(.OmniDropdown),
+.UrlBar-AddressField:has(.OmniDropdown) {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border: 0px solid var(--colorAccentBgFadedMore);
+    background-color: var(--colorAccentBgFadedMore);
+}
+:not(.SpeedDialView-SearchField) > .OmniDropdown {
+    top: 0px;
+    margin: 0px 1px;
+    border-radius: var(--radius);
+}
+.OmniLinkItem {
+    --item-height: 30px !important;
+    margin: 4px 2px;
+    border-radius: var(--radius);
+    transition: background-color 0.15s ease-out !important;
+}
+.OmniLinkItem--Highlighted,
+.OmniLinkItem--Highlighted:hover,
+.OmniLinkItem:not(.OmniLinkItem--Highlighted):hover {
+    background-color: var(--colorHighlightBgDark);
+    transition: background-color 0.15s ease-in !important;
+}
+.color-behind-tabs-off .SearchField, .color-behind-tabs-off .UrlBar-AddressField {
+    border: 0px solid var(--colorAccentBg);
+    background-color: var(--colorAccentBg);
+}
+.color-behind-tabs-on .SearchField, .color-behind-tabs-on .UrlBar-AddressField {
+    border: 0px solid var(--colorBg);
+    background-color: var(--colorBg);
+}
+.SearchField:hover, .UrlBar-AddressField {
+    transition: background-color 0.15s ease-out !important;
+}
+.color-behind-tabs-off .SearchField:hover, .color-behind-tabs-off .UrlBar-AddressField:hover,
+.color-behind-tabs-on .SearchField:hover, .color-behind-tabs-on .UrlBar-AddressField:hover {
+    border: 0px solid var(--colorAccentBgAlphaHeavy);
+    background-color: var(--colorAccentBgAlphaHeavy);
+    transition: background-color 0.15s ease-in !important;
+}
+.color-behind-tabs-off :not(.SpeedDialView-SearchField) > .OmniDropdown,
+.color-behind-tabs-off .SearchField:active, .color-behind-tabs-off .UrlBar-AddressField:active, .color-behind-tabs-off :not(.SpeedDialView-SearchField) > .OmniDropdown:active,
+.color-behind-tabs-off .SearchField:focus, .color-behind-tabs-off .UrlBar-AddressField:focus, .color-behind-tabs-off :not(.SpeedDialView-SearchField) > .OmniDropdown:focus,
+.color-behind-tabs-off .SearchField:focus-within, .color-behind-tabs-off .UrlBar-AddressField:focus-within, .color-behind-tabs-off :not(.SpeedDialView-SearchField) > .OmniDropdown:focus-within,
+.color-behind-tabs-on :not(.SpeedDialView-SearchField) > .OmniDropdown,
+.color-behind-tabs-on .SearchField:active, .color-behind-tabs-on .UrlBar-AddressField:active, .color-behind-tabs-on :not(.SpeedDialView-SearchField) > .OmniDropdown:active,
+.color-behind-tabs-on .SearchField:focus, .color-behind-tabs-on .UrlBar-AddressField:focus, .color-behind-tabs-on :not(.SpeedDialView-SearchField) > .OmniDropdown:focus,
+.color-behind-tabs-on .SearchField:focus-within, .color-behind-tabs-on .UrlBar-AddressField:focus-within, .color-behind-tabs-on :not(.SpeedDialView-SearchField) > .OmniDropdown:focus-within {
+    border: 0px solid var(--colorAccentBgFadedMore);
+    background-color: var(--colorAccentBgFadedMore);
+    outline: 0px solid var(--colorHighlightBg);
+    outline-offset: 0px;
+    transition: background-color 0.15s ease-in !important;
+}
+.SearchField:has(.OmniDropdown):hover,
+.UrlBar-AddressField:has(.OmniDropdown):hover,
+.color-behind-tabs-off .SearchField:active:hover, .color-behind-tabs-off .UrlBar-AddressField:active:hover,
+.color-behind-tabs-off .SearchField:focus:hover, .color-behind-tabs-off .UrlBar-AddressField:focus:hover,
+.color-behind-tabs-off .SearchField:focus-within:hover, .color-behind-tabs-off .UrlBar-AddressField:focus-within:hover,
+.color-behind-tabs-on .SearchField:active:hover, .color-behind-tabs-on .UrlBar-AddressField:active:hover,
+.color-behind-tabs-on .SearchField:focus:hover, .color-behind-tabs-on .UrlBar-AddressField:focus:hover,
+.color-behind-tabs-on .SearchField:focus-within:hover, .color-behind-tabs-on .UrlBar-AddressField:focus-within:hover {
+    border: 0px solid var(--colorAccentBgFadedMore);
+    background-color: var(--colorAccentBgFadedMore);
+    transition: background-color 0.15s ease-in !important;
+}
+.UrlBar-AddressField .pageload .pageload-indicator::-webkit-progress-value {
+    background-color: var(--colorHighlightBgDark);
+}
+/* Stylize the private window indicator */
+.UrlBar-PrivateWindowIndicator {
+    background-color: var(--colorHighlightBg);
+    height: 30px;
+    margin: 0 2px;
+    border-radius: var(--radius);
+    color: var(--colorHighlightFg);
+}
+
+/* Round mainbar and bookmark bar */
+.mainbar, .bookmark-bar {
+    border-radius: var(--radius);
+    margin-left: 4px;
+    margin-right: 4px;
+    padding-left: 2px !important;
+    padding-right: 2px !important;
+    box-shadow: -40px 0 0 0 var(--colorBg), 40px 0 0 0 var(--colorBg);
+}
+.transparent-tabbar .mainbar, .transparent-tabbar .bookmark-bar {
+    box-shadow: -40px 0 0 0 var(--colorBgAlphaBlur), 40px 0 0 0 var(--colorBgAlphaBlur);
+}
+/*.transparent-tabbar .mainbar, .transparent-tabbar .bookmark-bar {
+    backdrop-filter: var(--backgroundBlur);
+}*/
+/*TEST
+.transparent-tabbar .mainbar::before,
+.transparent-tabbar .bookmark-bar::before {
+    content: "";
+    position: absolute;
+    margin-left: -4px;
+    margin-right: -4px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: var(--backgroundBlur);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.transparent-tabbar .mainbar::after,
+.transparent-tabbar .bookmark-bar::after {
+    content: "";
+    position: absolute;
+    margin-left: -4px;
+    margin-right: -4px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--colorBgAlphaBlur);
+    pointer-events: none;
+    z-index: 3;
+}
+
+.transparent-tabbar .mainbar,
+.transparent-tabbar .bookmark-bar {
+    position: relative;
+    z-index: 4;
+}
+TEST FIN*/
+.mainbar .toolbar-mainbar {
+    height: 38px !important;
+    padding-right: 1px;
+    padding-left: 1px;
+}
+.bookmark-bar-top .mainbar {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.bookmark-bar .observer {
+    border-radius: var(--radius);
+    margin-bottom: 2px;
+    padding: 0px 1px 2px 1px;
+}
+.address-top .bookmark-bar,
+.address-top .bookmark-bar .observer {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.density-on#browser .toolbar-mainbar:not(.toolbar-wrap) .button-toolbar:not(:last-of-type),
+.density-on#browser .toolbar-statusbar .button-toolbar:not(:last-of-type) {
+    padding-right: 2px;
+}
+#browser .toolbar-mainbar:not(.toolbar-wrap) .button-toolbar,
+#browser .toolbar-statusbar .button-toolbar {
+    padding-right: 2px !important;
+    padding-left: 2px !important;
+}
+
+/*Bookmark bar*/
+.bookmark-bar-top .bookmark-bar {
+    height: 30px;
+    border: 0px solid var(--colorAccentBg) !important;
+}
+.color-behind-tabs-off .bookmark-bar {
+    border-color: var(--colorAccentBg) !important;
+}
+.color-behind-tabs-on .bookmark-bar {
+    border-color: var(--colorBg) !important;
+}
+.bookmark-bar button { 
+    padding: 0 8px 0 0;
+    border-radius: var(--radius);
+}
+.bookmark-bar button img, .bookmark-bar button svg {
+    margin-left: 2px;
+}
+.bookmark-bar button .title {
+    line-height: 17px;
+    padding-right: 2px;
+}
+
+/* In-page search */
+.find-in-page-wrapper {
+    background-color: var(--colorBg);
+    border-bottom: 0px solid var(--colorBorder);
+    margin-bottom: -4px;
+}
+
+/* Speed Dial */
+.thumbnail-title .button-title {
+    border-radius: 0;
+}
+/*Hide speed dial thumbnail capture in progress indicator because of display issues*/
+.in-progress {
+    display: none !important;
+}
+
+/* Panels */
+#switch {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+.density-on #switch {
+    flex: 0 0 calc(34px + 4px * 2);
+    max-width: calc(34px + 4px * 2);
+}
+#browser:not(.fullscreen) #panels-container {
+    min-width: calc(34px + 4px * 2) !important;
+}
+#panels-container.switcher {
+    width: 0 !important;
+}
+.panel-collapse-guard {
+    min-width: 0 !important;
+}
+#panels-container.left .panel-collapse-guard, 
+#panels-container.left .panel-group {
+    left: calc(34px + 4px * 2) !important;
+}
+#panels-container.left .panel-collapse-guard, 
+#panels-container.left .panel-group:not(:nth-child(2)) {
+    left: calc(34px + 4px * 4) !important;
+}
+#panels-container.right .panel-collapse-guard, 
+#panels-container.right .panel-group {
+    right: calc(34px + 4px * 2) !important;
+}
+#panels-container.right .panel-collapse-guard, 
+#panels-container.right .panel-group:not(:nth-child(2)) {
+    right: calc(34px + 4px * 4) !important;
+}
+#panels-container.left:not(.icons) .panel-group,
+#panels-container.left.icons:not(:has(.SlideBar)) {
+    border-right: 0px solid rgba(0, 0, 0, 0);
+}
+#panels-container.right:not(.icons) .panel-group,
+#panels-container.right.icons:not(:has(.SlideBar)) {
+    border-left: 0px solid rgba(0, 0, 0, 0);
+}
+#panels-container.left:not(.overlay) .panel-group, 
+#panels-container.left.icons .panel-group, 
+#panels-container.left.icons.overlay, 
+#panels-container.left.icons #switch:only-child, 
+#panels-container.right:not(.overlay) .panel-group,
+#panels-container.right.icons .panel-group,
+#panels-container.right.icons.overlay,
+#panels-container.right.icons #switch:only-child {
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0) !important;
+}
+.toolbar-panel > .button-toolbar > button .button-badge, 
+.toolbar-panel .toolbar-extensions .button-toolbar > button .button-badge, 
+.toolbar-panel .page-zoom-controls .button-toolbar > button .button-badge {
+    border-radius: var(--radius);
+    line-height: 14px;
+}
+
+/* Button colors */
+.toolbar-mainbar .toolbar-extensions > .button-toolbar > button.browserAction-button:hover,
+.toolbar-mainbar .page-zoom-controls > .button-toolbar > button.browserAction-button:hover,
+.toolbar-mainbar > .button-toolbar > button.browserAction-button:hover,
+.toolbar-mainbar .toolbar-extensions > .toolbar-group > .button-toolbar > button.browserAction-button:hover,
+.toolbar-mainbar .page-zoom-controls > .toolbar-group > .button-toolbar > button.browserAction-button:hover,
+.toolbar-mainbar > .toolbar-group > .button-toolbar > button.browserAction-button:hover,
+.color-behind-tabs-off .toolbar-mainbar .toolbar-extensions > .button-toolbar > button:hover,
+.color-behind-tabs-off .toolbar-mainbar .page-zoom-controls > .button-toolbar > button:hover,
+.color-behind-tabs-off .toolbar-mainbar > .button-toolbar > button:hover,
+.color-behind-tabs-off .toolbar-mainbar .toolbar-extensions > .toolbar-group > .button-toolbar > button:hover,
+.color-behind-tabs-off .toolbar-mainbar .page-zoom-controls > .toolbar-group > .button-toolbar > button:hover,
+.color-behind-tabs-off .toolbar-mainbar > .toolbar-group > .button-toolbar > button:hover,
+.color-behind-tabs-off .toolbar-insideinput.toolbar-insideinput.toolbar-insideinput > .button-toolbar > button:hover,
+.color-behind-tabs-off .toolbar-insideinput.toolbar-insideinput.toolbar-insideinput > .toolbar-group > .button-toolbar > button:hover,
+.color-behind-tabs-off .toolbar-insideinput.toolbar-insideinput.toolbar-insideinput > .button-toolbar > button.button-pressed:hover,
+.color-behind-tabs-off .toolbar-insideinput.toolbar-insideinput.toolbar-insideinput > .toolbar-group > .button-toolbar > button.button-pressed:hover,
+.color-behind-tabs-off .toolbar-insideinput.toolbar-insideinput.toolbar-insideinput > .button-toolbar > button.button-pressed:active:hover,
+.color-behind-tabs-off .toolbar-insideinput.toolbar-insideinput.toolbar-insideinput > .toolbar-group > .button-toolbar > button.button-pressed:active:hover,
+.color-behind-tabs-off .BookmarkButton-Button .ToolbarButton-Button:hover,
+.color-behind-tabs-off .BookmarkButton-Button .ToolbarButton-Button.button-pressed:hover,
+.color-behind-tabs-off .BookmarkButton-Button .ToolbarButton-Button.button-pressed:active:hover,
+.color-behind-tabs-off .bookmark-bar button:focus-visible,
+.color-behind-tabs-off .bookmark-bar button:hover,
+.tab.active .close:hover {
+    background-color: var(--colorHighlightBgDark);
+    transition: background-color 0.15s ease-in !important;
+}
+.button-toolbar > button:hover,
+.color-behind-tabs-on .toolbar-mainbar .toolbar-extensions > .button-toolbar > button.browserAction-button:hover,
+.color-behind-tabs-on .toolbar-mainbar .page-zoom-controls > .button-toolbar > button.browserAction-button:hover,
+.color-behind-tabs-on .toolbar-mainbar > .button-toolbar > button.browserAction-button:hover,
+.color-behind-tabs-on .toolbar-mainbar .toolbar-extensions > .toolbar-group > .button-toolbar > button.browserAction-button:hover,
+.color-behind-tabs-on .toolbar-mainbar .page-zoom-controls > .toolbar-group > .button-toolbar > button.browserAction-button:hover,
+.color-behind-tabs-on .toolbar-mainbar > .toolbar-group > .button-toolbar > button.browserAction-button:hover,
+.color-behind-tabs-on .toolbar-mainbar .toolbar-extensions > .button-toolbar > button:hover,
+.color-behind-tabs-on .toolbar-mainbar .page-zoom-controls > .button-toolbar > button:hover,
+.color-behind-tabs-on .toolbar-mainbar > .button-toolbar > button:hover,
+.color-behind-tabs-on .toolbar-mainbar .toolbar-extensions > .toolbar-group > .button-toolbar > button:hover,
+.color-behind-tabs-on .toolbar-mainbar .page-zoom-controls > .toolbar-group > .button-toolbar > button:hover,
+.color-behind-tabs-on .toolbar-mainbar > .toolbar-group > .button-toolbar > button:hover,
+.color-behind-tabs-on .toolbar-insideinput.toolbar-insideinput.toolbar-insideinput > .button-toolbar > button:hover,
+.color-behind-tabs-on .toolbar-insideinput.toolbar-insideinput.toolbar-insideinput > .toolbar-group > .button-toolbar > button:hover,
+.color-behind-tabs-on .toolbar-insideinput.toolbar-insideinput.toolbar-insideinput > .button-toolbar > button.button-pressed:hover,
+.color-behind-tabs-on .toolbar-insideinput.toolbar-insideinput.toolbar-insideinput > .toolbar-group > .button-toolbar > button.button-pressed:hover,
+.color-behind-tabs-on .toolbar-insideinput.toolbar-insideinput.toolbar-insideinput > .button-toolbar > button.button-pressed:active:hover,
+.color-behind-tabs-on .toolbar-insideinput.toolbar-insideinput.toolbar-insideinput > .toolbar-group > .button-toolbar > button.button-pressed:active:hover,
+.color-behind-tabs-on .BookmarkButton-Button .ToolbarButton-Button:hover,
+.color-behind-tabs-on .BookmarkButton-Button .ToolbarButton-Button.button-pressed:hover,
+.color-behind-tabs-on .BookmarkButton-Button .ToolbarButton-Button.button-pressed:active:hover,
+.color-behind-tabs-on .bookmark-bar button:focus-visible,
+.color-behind-tabs-on .bookmark-bar button:hover {
+    background-color: var(--colorHighlightBgDark);
+    transition: background-color 0.15s ease-in !important;
+}
+.button-toolbar > button:active,
+.density-on #switch .addwebpanel-wrapper > button.active button, 
+.density-on #switch > .button-toolbar.active button, 
+.density-on #switch > * > .button-toolbar.active button, 
+.density-on #switch > button.active button,
+.toolbar-statusbar > .button-toolbar > button:active,
+.toolbar-statusbar .toolbar-extensions .button-toolbar > button:active,
+.toolbar-statusbar .page-zoom-controls .button-toolbar > button:active,
+.toolbar-statusbar > .button-toolbar > button.button-pressed,
+.toolbar-statusbar .toolbar-extensions .button-toolbar > button.button-pressed,
+.toolbar-statusbar .page-zoom-controls .button-toolbar > button.button-pressed,
+.tabs-bottom.color-behind-tabs-on .toolbar-statusbar > .button-toolbar > button:active,
+.tabs-bottom.color-behind-tabs-on .toolbar-statusbar .toolbar-extensions .button-toolbar > button:active,
+.tabs-bottom.color-behind-tabs-on .toolbar-statusbar .page-zoom-controls .button-toolbar > button:active,
+.tabs-bottom.color-behind-tabs-on .toolbar-statusbar > .button-toolbar > button.button-pressed,
+.tabs-bottom.color-behind-tabs-on .toolbar-statusbar .toolbar-extensions .button-toolbar > button.button-pressed,
+.tabs-bottom.color-behind-tabs-on .toolbar-statusbar .page-zoom-controls .button-toolbar > button.button-pressed,
+.color-behind-tabs-on .toolbar-mainbar .toolbar-extensions > .button-toolbar > button:active,
+.color-behind-tabs-on .toolbar-mainbar .page-zoom-controls > .button-toolbar > button:active,
+.color-behind-tabs-on .toolbar-mainbar > .button-toolbar > button:active,
+.color-behind-tabs-on .toolbar-mainbar .toolbar-extensions > .toolbar-group > .button-toolbar > button:active,
+.color-behind-tabs-on .toolbar-mainbar .page-zoom-controls > .toolbar-group > .button-toolbar > button:active,
+.color-behind-tabs-on .toolbar-mainbar > .toolbar-group > .button-toolbar > button:active,
+.color-behind-tabs-off .toolbar-mainbar .toolbar-extensions > .button-toolbar > button:active,
+.color-behind-tabs-off .toolbar-mainbar .page-zoom-controls > .button-toolbar > button:active,
+.color-behind-tabs-off .toolbar-mainbar > .button-toolbar > button:active,
+.color-behind-tabs-off .toolbar-mainbar .toolbar-extensions > .button-toolbar > button.button-pressed,
+.color-behind-tabs-off .toolbar-mainbar .page-zoom-controls > .button-toolbar > button.button-pressed,
+.color-behind-tabs-off .toolbar-mainbar > .button-toolbar > button.button-pressed,
+.color-behind-tabs-off .toolbar-mainbar .toolbar-extensions > .button-toolbar > button.button-pressed:active,
+.color-behind-tabs-off .toolbar-mainbar .page-zoom-controls > .button-toolbar > button.button-pressed:active,
+.color-behind-tabs-off .toolbar-mainbar > .button-toolbar > button.button-pressed:active,
+.color-behind-tabs-on .toolbar-mainbar .toolbar-extensions > .button-toolbar > button.button-pressed,
+.color-behind-tabs-on .toolbar-mainbar .page-zoom-controls > .button-toolbar > button.button-pressed,
+.color-behind-tabs-on .toolbar-mainbar > .button-toolbar > button.button-pressed,
+.color-behind-tabs-on .toolbar-mainbar .toolbar-extensions > .button-toolbar > button.button-pressed:active,
+.color-behind-tabs-on .toolbar-mainbar .page-zoom-controls > .button-toolbar > button.button-pressed:active,
+.color-behind-tabs-on .toolbar-mainbar > .button-toolbar > button.button-pressed:active,
+.color-behind-tabs-off .toolbar-mainbar .toolbar-extensions > .toolbar-group > .button-toolbar > button:active,
+.color-behind-tabs-off .toolbar-mainbar .page-zoom-controls > .toolbar-group > .button-toolbar > button:active,
+.color-behind-tabs-off .toolbar-mainbar > .toolbar-group > .button-toolbar > button:active,
+.toolbar-mainbar .toolbar-extensions > .button-toolbar > button.browserAction-button.popup-visible,
+.toolbar-mainbar .page-zoom-controls > .button-toolbar > button.browserAction-button.popup-visible,
+.toolbar-mainbar > .button-toolbar > button.browserAction-button.popup-visible,
+.toolbar-mainbar .toolbar-extensions > .toolbar-group > .button-toolbar > button.browserAction-button.popup-visible,
+.toolbar-mainbar .page-zoom-controls > .toolbar-group > .button-toolbar > button.browserAction-button.popup-visible,
+.toolbar-mainbar > .toolbar-group > .button-toolbar > button.browserAction-button.popup-visible,
+.toolbar-panel > .button-toolbar > button.button-pressed,
+.toolbar-panel .toolbar-extensions .button-toolbar > button.button-pressed,
+.toolbar-panel .page-zoom-controls .button-toolbar > button.button-pressed,
+.toolbar-insideinput.toolbar-insideinput.toolbar-insideinput > .button-toolbar > button.button-pressed,
+.toolbar-insideinput.toolbar-insideinput.toolbar-insideinput > .toolbar-group > .button-toolbar > button.button-pressed,
+.toolbar-insideinput.toolbar-insideinput.toolbar-insideinput > .button-toolbar > button.button-pressed:active,
+.toolbar-insideinput.toolbar-insideinput.toolbar-insideinput > .toolbar-group > .button-toolbar > button.button-pressed:active,
+.BookmarkButton-Button .ToolbarButton-Button.button-pressed,
+.BookmarkButton-Button .ToolbarButton-Button.button-pressed:active,
+.tab.active .close:active {
+    background-color: var(--colorHighlightBgDark);
+    background-image: none;
+    transition: background-color 0.15s ease-in !important;
+}
+.toolbar-statusbar > .button-toolbar > button,
+.toolbar-statusbar .toolbar-extensions .button-toolbar > button,
+.toolbar-statusbar .page-zoom-controls .button-toolbar > button,
+.toolbar-mainbar .toolbar-extensions > .button-toolbar > button,
+.toolbar-mainbar .page-zoom-controls > .button-toolbar > button,
+.toolbar-mainbar > .button-toolbar > button,
+.toolbar-mainbar .toolbar-extensions > .toolbar-group > .button-toolbar > button,
+.toolbar-mainbar .page-zoom-controls > .toolbar-group > .button-toolbar > button,
+.toolbar-mainbar > .toolbar-group > .button-toolbar > button,
+.toolbar-mainbar .toolbar-extensions > .button-toolbar > button.browserAction-button,
+.toolbar-mainbar .page-zoom-controls > .button-toolbar > button.browserAction-button,
+.toolbar-mainbar > .button-toolbar > button.browserAction-button,
+.toolbar-mainbar .toolbar-extensions > .toolbar-group > .button-toolbar > button.browserAction-button,
+.toolbar-mainbar .page-zoom-controls > .toolbar-group > .button-toolbar > button.browserAction-button,
+.toolbar-mainbar > .toolbar-group > .button-toolbar > button.browserAction-button,
+.toolbar-panel > .button-toolbar > button,
+.toolbar-panel .toolbar-extensions .button-toolbar > button,
+.toolbar-panel .page-zoom-controls .button-toolbar > button,
+.toolbar-insideinput.toolbar-insideinput.toolbar-insideinput > .button-toolbar > button,
+.toolbar-insideinput.toolbar-insideinput.toolbar-insideinput > .toolbar-group > .button-toolbar > button,
+.BookmarkButton-Button .ToolbarButton-Button {
+    transition: background-color 0.15s ease-out !important;
+}
+
+/*Content area borders*/
+#browser:not(.fullscreen) .devtools-container,
+#browser:not(.fullscreen) .webpanel-content {
+    margin: 4px;
+    border-radius: var(--radius);
+    box-shadow: 0 0 0 40px var(--colorBg);
+}
+#browser:not(.fullscreen) .left .devtools-container,
+#browser:not(.fullscreen) .left .webpanel-content {
+    margin-left: 0px;
+}
+#browser:not(.fullscreen) .right .devtools-container,
+#browser:not(.fullscreen) .right .webpanel-content {
+    margin-right: 0px;
+}
+#panels .webpanel-stack .webpanel .webpanel-header {
+    box-shadow: 0 0 0 0 var(--colorBorder);
+    z-index: 1;
+}
+
+/*Status info*/
+#webview-container ~ .StatusInfo {
+    margin: 4px;
+}
+#webview-container ~ .StatusInfo .StatusInfo .UrlFragments, #webview-container ~ .StatusInfo .StatusInfo-Content {
+    border-radius: var(--radius);
+    border: 0px solid transparent;
+    background-color: var(--colorBgAlpha);
+}
+#browser > footer,
+:not(.tabs-bottom)#browser > footer {
+    background: var(--colorBg);
+}
+#browser > footer:after,
+:not(.tabs-bottom)#browser > footer:after {
+    background-color: transparent;
+}
+#browser:not(.fullscreen) > footer .toolbar-statusbar,
+:not(.tabs-bottom)#browser:not(.fullscreen) > footer .toolbar-statusbar {
+    margin-top: -4px;
+}
