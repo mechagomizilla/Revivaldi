@@ -3,20 +3,20 @@ My custom CSS for Vivaldi, inspired by Opera
 
 Screenshots:
 
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/d616bd32-9201-4dcf-8dc0-a63f9c597df6" />
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/6e4e1c32-8b5d-4671-ad1f-e84b75915874" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/2a0aaebc-cf2e-44a0-a94a-a2277c6b8d75" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/e716b252-8964-428c-ac60-ea96c566468d" />
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/e859c50e-96c3-4d3f-96ea-80b30c25853b" />
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/031fd1b1-ed85-4df4-b486-27409f0aa88b" />
 
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/864d800c-ab98-4324-8924-7d0ec9858af8" />
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/61b44404-82e0-452c-8ff9-cf8cd3bacc1b" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/99d1cafd-4568-4c5f-9363-7fcc2089f373" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/c608e895-d79f-4267-877e-ec64341910be" />
 
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/9e41ba1b-672e-4e82-a400-57735ddf5fe6" />
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/8aa9b10c-c756-4194-a1c2-541fa58c73ad" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/684c289f-2434-4f7b-a9b1-f32b0297ec84" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/58d5c5d5-b7fc-4eb6-b292-6c076edada51" />
 
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/51f6ae46-a591-4a8f-b6d1-c617460dd4b3" />
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/5c9f4c79-893c-408d-9689-b696bdb124bb" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/4ab71ac1-eaa2-4edd-968c-b51ddf33a154" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/a3bddf83-d5e7-4b09-8126-5baef3276f04" />
 
 
 Configuration steps:
@@ -56,8 +56,12 @@ Configuration steps:
   12) Bookmarks > BOOKMARK BAR > uncheck Show Bookmark Bar
   13) Rightclick tab stacking > Edit... > Choose any color to use design from CSS (only if you are using tab stacking), repeat for every tab stacking
   14) Rightclick web app > Floating Panel > uncheck This panel, repeat for every web app you are using
-  15) Restart Vivaldi
-  16) Enjoy your new CSS
+  15) Rightclick tab bar > Customize Toolbar... > Move toolbar buttons according to screenshot (optional):
+
+  <img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/37ec634e-f782-423d-8205-a13138370ab4" />
+
+  16) Restart Vivaldi
+  17) Enjoy your new CSS
 
 My recommendations:
 
