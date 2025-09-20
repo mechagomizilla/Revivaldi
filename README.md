@@ -25,8 +25,9 @@ Configuration steps:
   2) Type vivaldi://experiments in the URL bar and check Allow CSS modifications
   3) Open Vivaldi Settings
   4) Appearance > CUSTOM UI MODIFICATIONS and select the folder in which you downloaded the CSS.
-  5) Appearance > Status Bar > Hide Status Bar
-  6) Themes > New Theme... and follow the screenshots below:
+  5) Appearance > User Interface Density > Regular
+  6) Appearance > Status Bar > Hide Status Bar
+  7) Themes > New Theme... and follow the screenshots below:
 
   Colors:
   
@@ -48,20 +49,20 @@ Configuration steps:
 
   You can replace the default icons with mine from this repository.
   
-  7) Tabs > Tab Bar Position > Left
-  8) Tabs > Tab Stacking > Accordion (only if you are using tab stacking)
-  9) Tabs > WORKSPACES > check Enable Workspaces and Show Workspaces in Tab Bar
-  10) Panel > Panel Position > Right Side
-  11) Panel > Panel Options > check Floating Panel
-  12) Bookmarks > BOOKMARK BAR > uncheck Show Bookmark Bar
-  13) Rightclick tab stacking > Edit... > Choose any color to use design from CSS (only if you are using tab stacking), repeat for every tab stacking
-  14) Rightclick web app > Floating Panel > uncheck This panel, repeat for every web app you are using
-  15) Rightclick tab bar > Customize Toolbar... > Move toolbar buttons according to screenshot (optional):
+  8) Tabs > Tab Bar Position > Left
+  9) Tabs > Tab Stacking > Accordion (only if you are using tab stacking)
+  10) Tabs > WORKSPACES > check Enable Workspaces and Show Workspaces in Tab Bar
+  11) Panel > Panel Position > Right Side
+  12) Panel > Panel Options > check Floating Panel
+  13) Bookmarks > BOOKMARK BAR > uncheck Show Bookmark Bar
+  14) Rightclick tab stacking > Edit... > Choose any color to use design from CSS (only if you are using tab stacking), repeat for every tab stacking
+  15) Rightclick web app > Floating Panel > uncheck This panel, repeat for every web app you are using
+  16) Rightclick tab bar > Customize Toolbar... > Move toolbar buttons according to screenshot (optional):
 
   <img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/37ec634e-f782-423d-8205-a13138370ab4" />
 
-  16) Restart Vivaldi
-  17) Enjoy your new CSS
+  17) Restart Vivaldi
+  18) Enjoy your new CSS
 
 My recommendations:
 
