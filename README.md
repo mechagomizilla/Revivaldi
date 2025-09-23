@@ -3,6 +3,8 @@ My custom CSS for Vivaldi, inspired by Opera, Firefox and Edge.
 
 This is a work in progress. This was forked from Operaldi on 2025-09-16 in order to rewrite my own CSS on top of it to better support transparency. My own css code, labeled "Legacy.css", will gradually be merged with Operaldi over the next few weeks until I'm satisfied with it. I hope I will be able to use new code from upstream easily, but there is a large chance that my code will diverge greatly.
 
+The name is being workshopped. I'm hesitating between Vivaldi Air, Breath, Autumn Wind or something else related to air.
+
 Main features to add:
 - More flexibility (tabs and pannel on either side and horizontal tabs)
 - Bookmark bar
