@@ -7,6 +7,8 @@ zkusit upravit označený taby ctrl (asi nejde?)
 
 
 modernizace:
+přidat bookmark na speed dial okno
+přidat bookmark okno
 jaký další modální okna???
 speed dial (inspirace jinde?)
 
@@ -782,6 +784,12 @@ select:enabled:not([multiple], [size]), .SpeedDialView-Settings .VivaldiSelector
     box-shadow: none;
 }
 
+/* VIVALDI SETTINGS */
+
+.vivaldi-settings .settings-content {
+    background-color: var(--colorHighlightBgFaded); /* VIVALDI SETTINGS WERENT READABLE WITH COLORBG */
+}
+
 /* CTRL+F */
 
 .find-in-page-wrapper {
@@ -880,7 +888,7 @@ select:enabled:not([multiple], [size]), .SpeedDialView-Settings .VivaldiSelector
     background-color:  color-mix(in srgb, var(--colorBg), var(--lessTransparent));
 }
 
-.WorkspacePopup input { /* CHANING BG COLOR OF BUTTONS IN CREATE NEW WORKSPACE */
+.WorkspacePopup input { /* CHANGING BG COLOR OF BUTTONS IN CREATE NEW WORKSPACE */
     background-color: color-mix(in srgb, var(--colorBg), var(--lessTransparent));
 }
 
