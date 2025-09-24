@@ -978,6 +978,21 @@ select:enabled:not([multiple], [size]), .SpeedDialView-Settings .VivaldiSelector
     background-color: color-mix(in srgb, var(--colorBg), var(--lessTransparent));
 }
 
+.TabButtonPopup .quick-commands, .TabButtonPopup .dialog-content, .TabButtonPopup .no-results { /* BG OF RESULTS FROM SEARCH BAR PART 1 */
+    background-color: transparent;
+}
+
+.TabButtonPopup .quick-commands > .VivaldiList .VivaldiList-Offset {
+    padding: 6px 6px;
+    background-color:  color-mix(in srgb, var(--colorBg), var(--lessTransparent)); /* BG OF RESULTS FROM SEARCH BAR PART 2 */
+    border-radius: var(--radiusHalf); /* BORDER RADIUS OF RESULTS PART 1 */
+}
+
+.TabButtonPopup .VivaldiList { /* BORDER RADIUS OF RESULTS PART 2 */
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+}
+
 .TabButtonPopup .tree-row[data-selected] .window-entry:not(.window-entry-button) { /* BG OF SELECTED ITEM IN LIST */
     background-color: var(--colorBg);
 }
