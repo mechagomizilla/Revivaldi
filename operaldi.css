@@ -16,6 +16,7 @@ speed dial (inspirace jinde?)
 
 moooooooooooožnááá:
 arc like pinned taby?
+horizontal tabs?? #tabs-tabbar-container.left
 
 */ 
 
@@ -709,11 +710,11 @@ input.circular, button.circular { /* ADJUSTING RADIUS OF HOVER OF DOWNLAOD FOLDE
 }
 
 .hasfocus .webpageview.tiled.active {
-    box-shadow: 0 0 0 2px var(--colorFg); /* CHANGING COLOR OF BORDER OF ACTIVE WHEN BROWSER IS FOCUSED */
+    box-shadow: 0 0 0 2px var(--colorAccentBg); /* CHANGING COLOR OF BORDER OF ACTIVE WHEN BROWSER IS FOCUSED */
 }
 
 .isblurred .webpageview.tiled.active {
-    box-shadow: 0 0 0 2px var(--colorFg); /* CHANGING COLOR OF BORDER OF ACTIVE WHEN BROWSER ISNT FOCUSED */
+    box-shadow: 0 0 0 2px var(--colorAccentBg); /* CHANGING COLOR OF BORDER OF ACTIVE WHEN BROWSER ISNT FOCUSED */
 }
 
 .webpageview.tiled:not(.active) {
