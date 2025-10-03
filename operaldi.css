@@ -7,6 +7,8 @@ zkusit upravit označený taby ctrl (asi nejde?)
 
 
 modernizace:
+přidat bookmark na speed dial okno
+přidat bookmark okno
 jaký další modální okna???
 speed dial (inspirace jinde?)
 
@@ -14,6 +16,7 @@ speed dial (inspirace jinde?)
 
 moooooooooooožnááá:
 arc like pinned taby?
+horizontal tabs?? #tabs-tabbar-container.left
 
 */ 
 
@@ -85,7 +88,7 @@ input[type=checkbox]:before, input[type=checkbox]:after { /* COLOR OF ICON IN CH
     border-top-right-radius: var(--radius);
 }
 #modal-bg .modal-wrapper { /* BG COLOR */
-    background-color:  color-mix(in srgb, var(--colorHighlightBg), var(--lessTransparent));
+    background-color:  color-mix(in srgb, color-mix(in srgb, var(--colorBg), var(--colorHighlightBg)), var(--lessTransparent));
     backdrop-filter: var(--blur);
     -webkit-backdrop-filter: var(--blur);
     border-radius: var(--radius);
@@ -316,7 +319,7 @@ button.ToolbarButton-Button[name="TilingToggle"] { /* FIXING SPACE NEXT TO TAB T
 }
 
 #browser .tab-position.colored .stack-counter {
-    background-color: var(--colorHighlightBg); /* BG COLOR OF TAB GROUP NUMBER */
+    background-color: var(--colorHighlightBgDark); /* BG COLOR OF TAB GROUP NUMBER */
     color: var(--colorAccentBg);
 }
 
@@ -707,11 +710,11 @@ input.circular, button.circular { /* ADJUSTING RADIUS OF HOVER OF DOWNLAOD FOLDE
 }
 
 .hasfocus .webpageview.tiled.active {
-    box-shadow: 0 0 0 2px var(--colorFg); /* CHANGING COLOR OF BORDER OF ACTIVE WHEN BROWSER IS FOCUSED */
+    box-shadow: 0 0 0 2px var(--colorAccentBg); /* CHANGING COLOR OF BORDER OF ACTIVE WHEN BROWSER IS FOCUSED */
 }
 
 .isblurred .webpageview.tiled.active {
-    box-shadow: 0 0 0 2px var(--colorFg); /* CHANGING COLOR OF BORDER OF ACTIVE WHEN BROWSER ISNT FOCUSED */
+    box-shadow: 0 0 0 2px var(--colorAccentBg); /* CHANGING COLOR OF BORDER OF ACTIVE WHEN BROWSER ISNT FOCUSED */
 }
 
 .webpageview.tiled:not(.active) {
@@ -782,6 +785,12 @@ select:enabled:not([multiple], [size]), .SpeedDialView-Settings .VivaldiSelector
     box-shadow: none;
 }
 
+/* VIVALDI SETTINGS */
+
+.vivaldi-settings .settings-content {
+    background-color: color-mix(in srgb, color-mix(in srgb, var(--colorBg), var(--colorHighlightBg)), var(--lessTransparent)); /* VIVALDI SETTINGS WERENT READABLE WITH COLORBG */
+}
+
 /* CTRL+F */
 
 .find-in-page-wrapper {
@@ -796,7 +805,7 @@ select:enabled:not([multiple], [size]), .SpeedDialView-Settings .VivaldiSelector
 /* WORKSPACES WINDOW + SOME ADJUSTING FOR PAGE TILING WINDOW */
 
 .button-popup { /* BG OF WORKSPACE WINDOW PART 1 */
-    background-color:  color-mix(in srgb, var(--colorHighlightBg), var(--lessTransparent));
+    background-color:  color-mix(in srgb, color-mix(in srgb, var(--colorBg), var(--colorHighlightBg)), var(--lessTransparent));
     backdrop-filter: var(--blur);
     -webkit-backdrop-filter: var(--blur);
     /* width: 194px; */
@@ -880,7 +889,7 @@ select:enabled:not([multiple], [size]), .SpeedDialView-Settings .VivaldiSelector
     background-color:  color-mix(in srgb, var(--colorBg), var(--lessTransparent));
 }
 
-.WorkspacePopup input { /* CHANING BG COLOR OF BUTTONS IN CREATE NEW WORKSPACE */
+.WorkspacePopup input { /* CHANGING BG COLOR OF BUTTONS IN CREATE NEW WORKSPACE */
     background-color: color-mix(in srgb, var(--colorBg), var(--lessTransparent));
 }
 
@@ -910,7 +919,7 @@ select:enabled:not([multiple], [size]), .SpeedDialView-Settings .VivaldiSelector
 }
 
 .CalendarNotifications { /* ADJUSTING BG OF CALENDAR NOTIFICATION */
-    background-color:  color-mix(in srgb, var(--colorHighlightBg), var(--lessTransparent));
+    background-color:  color-mix(in srgb, color-mix(in srgb, var(--colorBg), var(--colorHighlightBg)), var(--lessTransparent));
     backdrop-filter: var(--blur);
     -webkit-backdrop-filter: var(--blur);
 }
@@ -970,6 +979,21 @@ select:enabled:not([multiple], [size]), .SpeedDialView-Settings .VivaldiSelector
     background-color: color-mix(in srgb, var(--colorBg), var(--lessTransparent));
 }
 
+.TabButtonPopup .quick-commands, .TabButtonPopup .dialog-content, .TabButtonPopup .no-results { /* BG OF RESULTS FROM SEARCH BAR PART 1 */
+    background-color: transparent;
+}
+
+.TabButtonPopup .quick-commands > .VivaldiList .VivaldiList-Offset {
+    padding: 6px 6px;
+    background-color:  color-mix(in srgb, var(--colorBg), var(--lessTransparent)); /* BG OF RESULTS FROM SEARCH BAR PART 2 */
+    border-radius: var(--radiusHalf); /* BORDER RADIUS OF RESULTS PART 1 */
+}
+
+.TabButtonPopup .VivaldiList { /* BORDER RADIUS OF RESULTS PART 2 */
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+}
+
 .TabButtonPopup .tree-row[data-selected] .window-entry:not(.window-entry-button) { /* BG OF SELECTED ITEM IN LIST */
     background-color: var(--colorBg);
 }
@@ -988,7 +1012,7 @@ select:enabled:not([multiple], [size]), .SpeedDialView-Settings .VivaldiSelector
 }
 
 .TabButtonPopup .vivaldi-tree .VivaldiList .tree-item .tree-row:not([data-selected]) .colored { /* BG COLOR OF TAB GROUPS IN TAB BUTTON */
-    background-color:  color-mix(in srgb, var(--colorHighlightBg), var(--lessTransparent));
+    background-color:  color-mix(in srgb, color-mix(in srgb, var(--colorBg), var(--colorHighlightBg)), var(--lessTransparent));
 }
 
 .TabButtonPopup .vivaldi-tree input { /* BG OF BOTTOM BUTTON */
